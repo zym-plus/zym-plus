@@ -1,0 +1,66 @@
+<svg width="1100" height="360" viewBox="0 0 1100 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">zym-plus research system map</title>
+  <desc id="desc">A custom profile visualization showing four connected work lanes: forecasting, vision, 3D, and systems tooling.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1100" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08111F"/>
+      <stop offset="0.52" stop-color="#111827"/>
+      <stop offset="1" stop-color="#172033"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="120" y1="180" x2="980" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="0.34" stop-color="#22C55E"/>
+      <stop offset="0.66" stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="1100" height="360" rx="28" fill="url(#bg)"/>
+  <circle cx="950" cy="62" r="96" fill="#38BDF8" opacity="0.08"/>
+  <circle cx="142" cy="304" r="120" fill="#A78BFA" opacity="0.07"/>
+
+  <text x="72" y="62" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="750">Research System Map</text>
+  <text x="72" y="92" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">hypothesis -> implementation -> experiment -> audit -> visualization</text>
+
+  <path d="M114 188 C226 92 328 260 442 174 C548 94 650 274 764 178 C864 94 930 122 990 154" stroke="url(#rail)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M114 188 C226 92 328 260 442 174 C548 94 650 274 764 178 C864 94 930 122 990 154" stroke="url(#rail)" stroke-width="18" stroke-opacity="0.12" stroke-linecap="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="132" width="220" height="132" rx="18" fill="#0F172A" stroke="#2563EB" stroke-opacity="0.72"/>
+    <rect x="96" y="158" width="36" height="36" rx="10" fill="#38BDF8" fill-opacity="0.16" stroke="#38BDF8" stroke-opacity="0.9"/>
+    <text x="148" y="181" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Forecasting</text>
+    <text x="96" y="218" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">Fast falsification loops</text>
+    <text x="96" y="240" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">baseline, ablation, audit</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="318" y="92" width="220" height="132" rx="18" fill="#101827" stroke="#16A34A" stroke-opacity="0.7"/>
+    <rect x="344" y="118" width="36" height="36" rx="10" fill="#22C55E" fill-opacity="0.16" stroke="#22C55E" stroke-opacity="0.9"/>
+    <text x="396" y="141" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Vision</text>
+    <text x="344" y="178" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">Detection and restoration</text>
+    <text x="344" y="200" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">training, eval, demos</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="566" y="132" width="220" height="132" rx="18" fill="#0F172A" stroke="#7C3AED" stroke-opacity="0.72"/>
+    <rect x="592" y="158" width="36" height="36" rx="10" fill="#A78BFA" fill-opacity="0.16" stroke="#A78BFA" stroke-opacity="0.9"/>
+    <text x="644" y="181" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">3D Pipelines</text>
+    <text x="592" y="218" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">Reconstruction and rendering</text>
+    <text x="592" y="240" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">visual checks, scripts, viewers</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="814" y="92" width="216" height="132" rx="18" fill="#111827" stroke="#D97706" stroke-opacity="0.78"/>
+    <rect x="840" y="118" width="36" height="36" rx="10" fill="#F59E0B" fill-opacity="0.16" stroke="#F59E0B" stroke-opacity="0.9"/>
+    <text x="892" y="141" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Systems</text>
+    <text x="840" y="178" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">WSL and local automation</text>
+    <text x="840" y="200" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">repeatable research setup</text>
+  </g>
+
+  <text x="72" y="314" fill="#64748B" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">Designed for zym-plus. No copied layout, no template identity.</text>
+  <text x="742" y="314" fill="#64748B" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">Python / PyTorch / CUDA / Linux / GitHub Actions</text>
+</svg>
+

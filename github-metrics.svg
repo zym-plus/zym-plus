@@ -1,0 +1,10 @@
+<svg width="1000" height="240" viewBox="0 0 1000 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub metrics placeholder</title>
+  <desc id="desc">This placeholder will be replaced by lowlighter metrics after GitHub Actions runs.</desc>
+  <rect width="1000" height="240" rx="18" fill="#0F172A"/>
+  <rect x="32" y="32" width="936" height="176" rx="14" fill="#111827" stroke="#334155"/>
+  <text x="64" y="88" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">GitHub Metrics</text>
+  <text x="64" y="124" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">This panel is generated automatically by GitHub Actions.</text>
+  <text x="64" y="154" fill="#94A3B8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">Run the "GitHub Metrics" workflow once after pushing this profile repository.</text>
+</svg>
+
