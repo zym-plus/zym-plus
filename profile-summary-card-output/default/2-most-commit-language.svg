@@ -1,0 +1,11 @@
+<svg width="490" height="200" viewBox="0 0 490 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Most commit language placeholder</title>
+  <desc id="desc">Temporary placeholder replaced by github-profile-summary-cards.</desc>
+  <rect x="1" y="1" width="488" height="198" rx="10" fill="#FFFFFF" stroke="#D0D7DE"/>
+  <text x="28" y="48" fill="#24292F" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">most commit language</text>
+  <path d="M34 104H430" stroke="#D8DEE4" stroke-width="14" stroke-linecap="round"/>
+  <path d="M34 104H214" stroke="#2DA44E" stroke-width="14" stroke-linecap="round"/>
+  <path d="M34 140H430" stroke="#D8DEE4" stroke-width="14" stroke-linecap="round"/>
+  <path d="M34 140H148" stroke="#8250DF" stroke-width="14" stroke-linecap="round"/>
+</svg>
+

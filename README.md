@@ -1,53 +1,53 @@
+<h1 align="center">zym-plus</h1>
+
 <p align="center">
-  <img src="./assets/profile-hero.svg" alt="zym-plus animated research map" width="100%" />
+  AI research engineering / time-series forecasting / vision & 3D / WSL-native research stack
 </p>
 
 <p align="center">
   <a href="https://github.com/zym-plus?tab=repositories">
-    <img src="https://img.shields.io/badge/repos-open-111827?style=flat-square" alt="repositories" />
+    <img src="https://img.shields.io/badge/repositories-open-111827?style=flat-square" alt="repositories" />
   </a>
   <img src="https://komarev.com/ghpvc/?username=zym-plus&style=flat-square&color=2563eb" alt="profile views" />
   <img src="https://img.shields.io/github/followers/zym-plus?style=flat-square&label=followers&color=111827" alt="followers" />
 </p>
 
 <p align="center">
-  Research engineering for AI systems: forecasting experiments, vision pipelines, 3D reconstruction, and WSL-native tooling.
+  <img src="./profile-3d-contrib/profile-green-animate.svg" alt="3D GitHub contribution calendar" width="100%" />
 </p>
 
 <p align="center">
-  <img src="./assets/profile-dashboard.svg" alt="zym-plus research dashboard" width="100%" />
+  <img src="./profile-summary-card-output/default/0-profile-details.svg" alt="profile details" width="100%" />
 </p>
 
 <p align="center">
-  <img src="./profile-3d-contrib/profile-green-animate.svg" alt="3D GitHub contribution terrain" width="100%" />
+  <img src="./profile-summary-card-output/default/1-repos-per-language.svg" alt="repositories per language" width="49%" />
+  <img src="./profile-summary-card-output/default/2-most-commit-language.svg" alt="most committed languages" width="49%" />
 </p>
 
-## Focus
+<p align="center">
+  <img src="./profile-summary-card-output/default/3-stats.svg" alt="GitHub stats" width="49%" />
+  <img src="./profile-summary-card-output/default/4-productive-time.svg" alt="productive time" width="49%" />
+</p>
 
-| Direction | What I optimize for | Entry |
-|---|---|---|
-| Time-series research | Fair baselines, short falsification loops, ablation-first claims | [forecasting repos](https://github.com/zym-plus?tab=repositories&q=time&type=&language=&sort=) |
-| Vision and 3D | Detection, deblurring, reconstruction, visual verification | [vision repos](https://github.com/zym-plus?tab=repositories&q=yolo&type=&language=&sort=) |
-| WSL research stack | Reproducible local environments, GPU scripts, automation | [tooling repos](https://github.com/zym-plus?tab=repositories&q=wsl&type=&language=&sort=) |
+## Working Tracks
+
+| Track | Bias |
+|---|---|
+| Time-series research | Fast falsification, fair baselines, ablation-first evidence |
+| Vision and 3D | Detection, deblurring, reconstruction, visual verification |
+| WSL research stack | Reproducible local environments, GPU scripts, automation |
 
 ## Stack
 
-<p>
-  <img src="https://img.shields.io/badge/Python-ffffff?style=flat-square&logo=python&logoColor=3776AB&labelColor=ffffff&color=e5e7eb" alt="Python" />
-  <img src="https://img.shields.io/badge/PyTorch-ffffff?style=flat-square&logo=pytorch&logoColor=EE4C2C&labelColor=ffffff&color=e5e7eb" alt="PyTorch" />
-  <img src="https://img.shields.io/badge/CUDA-ffffff?style=flat-square&logo=nvidia&logoColor=76B900&labelColor=ffffff&color=e5e7eb" alt="CUDA" />
-  <img src="https://img.shields.io/badge/OpenCV-ffffff?style=flat-square&logo=opencv&logoColor=5C3EE8&labelColor=ffffff&color=e5e7eb" alt="OpenCV" />
-  <img src="https://img.shields.io/badge/Linux-ffffff?style=flat-square&logo=linux&logoColor=111827&labelColor=ffffff&color=e5e7eb" alt="Linux" />
-  <img src="https://img.shields.io/badge/WSL-ffffff?style=flat-square&logo=windows&logoColor=0078D4&labelColor=ffffff&color=e5e7eb" alt="WSL" />
-</p>
+`Python` · `PyTorch` · `CUDA` · `OpenCV` · `Linux` · `WSL` · `GitHub Actions`
 
 <details>
-<summary>Generated activity panels</summary>
+<summary>Visualization sources</summary>
 
-<p align="center">
-  <img src="./github-metrics.svg" alt="GitHub metrics" width="100%" />
-</p>
-
-![Contribution snake](https://raw.githubusercontent.com/zym-plus/zym-plus/output/github-contribution-grid-snake.svg)
+- [`yoshi389111/github-profile-3d-contrib`](https://github.com/yoshi389111/github-profile-3d-contrib): 3D contribution calendar.
+- [`vn7n24fzkq/github-profile-summary-cards`](https://github.com/vn7n24fzkq/github-profile-summary-cards): profile summary cards.
+- [`lowlighter/metrics`](https://github.com/lowlighter/metrics): generated metrics panel, kept in the repository for optional use.
 
 </details>
+
