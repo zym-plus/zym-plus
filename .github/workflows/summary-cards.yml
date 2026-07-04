@@ -17,12 +17,19 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - uses: vn7n24fzkq/github-profile-summary-cards@release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          USERNAME: ${{ github.repository_owner }}
-          BRANCH_NAME: main
-          UTC_OFFSET: 8
-          AUTO_PUSH: true
-
+      - name: Download generated summary cards
+        run: |
+          mkdir -p profile-summary-card-output/default
+          base="https://github-profile-summary-cards.vercel.app/api/cards"
+          curl -L "$base/profile-details?username=${{ github.repository_owner }}&theme=default" -o profile-summary-card-output/default/0-profile-details.svg
+          curl -L "$base/repos-per-language?username=${{ github.repository_owner }}&theme=default" -o profile-summary-card-output/default/1-repos-per-language.svg
+          curl -L "$base/most-commit-language?username=${{ github.repository_owner }}&theme=default" -o profile-summary-card-output/default/2-most-commit-language.svg
+          curl -L "$base/stats?username=${{ github.repository_owner }}&theme=default" -o profile-summary-card-output/default/3-stats.svg
+          curl -L "$base/productive-time?username=${{ github.repository_owner }}&theme=default&utcOffset=8" -o profile-summary-card-output/default/4-productive-time.svg
+      - name: Commit generated cards
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add profile-summary-card-output/default
+          git diff --cached --quiet || git commit -m "chore: update profile summary cards"
+          git push
