@@ -20,16 +20,6 @@
   <img src="./profile-summary-card-output/default/0-profile-details.svg" alt="profile details" width="100%" />
 </p>
 
-<p align="center">
-  <img src="./profile-summary-card-output/default/1-repos-per-language.svg" alt="repositories per language" width="49%" />
-  <img src="./profile-summary-card-output/default/2-most-commit-language.svg" alt="most committed languages" width="49%" />
-</p>
-
-<p align="center">
-  <img src="./profile-summary-card-output/default/3-stats.svg" alt="GitHub stats" width="49%" />
-  <img src="./profile-summary-card-output/default/4-productive-time.svg" alt="productive time" width="49%" />
-</p>
-
 ## Working Tracks
 
 | Track | Bias |
@@ -46,8 +36,7 @@
 <summary>Visualization sources</summary>
 
 - [`yoshi389111/github-profile-3d-contrib`](https://github.com/yoshi389111/github-profile-3d-contrib): 3D contribution calendar.
-- [`vn7n24fzkq/github-profile-summary-cards`](https://github.com/vn7n24fzkq/github-profile-summary-cards): profile summary cards.
+- [`vn7n24fzkq/github-profile-summary-cards`](https://github.com/vn7n24fzkq/github-profile-summary-cards): compact profile details card.
 - [`lowlighter/metrics`](https://github.com/lowlighter/metrics): generated metrics panel, kept in the repository for optional use.
 
 </details>
-
