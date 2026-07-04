@@ -15,12 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=zym-plus&show_icons=true&hide_border=true&rank_icon=github&bg_color=ffffff&title_color=111827&text_color=475569&icon_color=2563eb" alt="zym-plus GitHub stats" height="164" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zym-plus&layout=compact&hide_border=true&langs_count=8&bg_color=ffffff&title_color=111827&text_color=475569" alt="zym-plus language stats" height="164" />
-</p>
-
-<p align="center">
-  <img src="./profile-3d-contrib/profile-green-animate.svg" alt="3D contribution graph" width="100%" />
+  <img src="./assets/profile-dashboard.svg" alt="zym-plus research dashboard" width="100%" />
 </p>
 
 ## Focus
@@ -52,4 +47,3 @@
 ![Contribution snake](https://raw.githubusercontent.com/zym-plus/zym-plus/output/github-contribution-grid-snake.svg)
 
 </details>
-
