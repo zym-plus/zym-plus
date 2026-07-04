@@ -18,6 +18,10 @@
   <img src="./assets/profile-dashboard.svg" alt="zym-plus research dashboard" width="100%" />
 </p>
 
+<p align="center">
+  <img src="./profile-3d-contrib/profile-green-animate.svg" alt="3D GitHub contribution terrain" width="100%" />
+</p>
+
 ## Focus
 
 | Direction | What I optimize for | Entry |
