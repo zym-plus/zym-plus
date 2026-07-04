@@ -1,80 +1,55 @@
-<div align="center">
-
-# zym-plus
-
-Research engineering for AI systems: time-series forecasting, computer vision, 3D reconstruction, and practical Linux/WSL tooling.
-
-[![GitHub followers](https://img.shields.io/github/followers/zym-plus?style=flat&label=followers)](https://github.com/zym-plus)
-[![Profile views](https://komarev.com/ghpvc/?username=zym-plus&style=flat&color=0e75b6)](https://github.com/zym-plus)
-[![Repositories](https://img.shields.io/badge/repositories-open-2f80ed?style=flat)](https://github.com/zym-plus?tab=repositories)
-
-</div>
-
 <p align="center">
-  <img src="./assets/research-system-map.svg" alt="zym-plus research system map" width="100%" />
+  <img src="./assets/profile-hero.svg" alt="zym-plus animated research map" width="100%" />
 </p>
 
-## Current Work
+<p align="center">
+  <a href="https://github.com/zym-plus?tab=repositories">
+    <img src="https://img.shields.io/badge/repos-open-111827?style=flat-square" alt="repositories" />
+  </a>
+  <img src="https://komarev.com/ghpvc/?username=zym-plus&style=flat-square&color=2563eb" alt="profile views" />
+  <img src="https://img.shields.io/github/followers/zym-plus?style=flat-square&label=followers&color=111827" alt="followers" />
+</p>
 
-| Track | What I care about | Output style |
+<p align="center">
+  Research engineering for AI systems: forecasting experiments, vision pipelines, 3D reconstruction, and WSL-native tooling.
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=zym-plus&show_icons=true&hide_border=true&rank_icon=github&bg_color=ffffff&title_color=111827&text_color=475569&icon_color=2563eb" alt="zym-plus GitHub stats" height="164" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zym-plus&layout=compact&hide_border=true&langs_count=8&bg_color=ffffff&title_color=111827&text_color=475569" alt="zym-plus language stats" height="164" />
+</p>
+
+<p align="center">
+  <img src="./profile-3d-contrib/profile-green-animate.svg" alt="3D contribution graph" width="100%" />
+</p>
+
+## Focus
+
+| Direction | What I optimize for | Entry |
 |---|---|---|
-| Time-series forecasting | Fast falsification loops, fair baselines, contribution-source audits, and lightweight mechanisms that survive ablation. | Reproducible experiments, scripts, reports |
-| Computer vision | Detection, restoration, and visual understanding workflows that can move from prototype to usable demo. | Training code, evaluation, demos |
-| 3D reconstruction | Deblurring and reconstruction-oriented experiments, with attention to visual verification and practical pipelines. | Scripts, viewers, rendered checks |
-| Dev environment | WSL/Linux optimization, automation scripts, and repeatable local research environments. | Setup tools, notes, utilities |
+| Time-series research | Fair baselines, short falsification loops, ablation-first claims | [forecasting repos](https://github.com/zym-plus?tab=repositories&q=time&type=&language=&sort=) |
+| Vision and 3D | Detection, deblurring, reconstruction, visual verification | [vision repos](https://github.com/zym-plus?tab=repositories&q=yolo&type=&language=&sort=) |
+| WSL research stack | Reproducible local environments, GPU scripts, automation | [tooling repos](https://github.com/zym-plus?tab=repositories&q=wsl&type=&language=&sort=) |
 
-## Project Surface
+## Stack
 
-Instead of a long badge wall, this profile is organized around the way I work: hypothesis, code, experiment, audit, and visualization.
-
-| Area | Repository entry |
-|---|---|
-| Forecasting research | [Search my time-series repositories](https://github.com/zym-plus?tab=repositories&q=time&type=&language=&sort=) |
-| Vision and YOLO work | [Search my vision repositories](https://github.com/zym-plus?tab=repositories&q=yolo&type=&language=&sort=) |
-| 3D / reconstruction work | [Search my 3D repositories](https://github.com/zym-plus?tab=repositories&q=3d&type=&language=&sort=) |
-| WSL and tooling | [Search my tooling repositories](https://github.com/zym-plus?tab=repositories&q=wsl&type=&language=&sort=) |
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=zym-plus&show_icons=true&theme=transparent&hide_border=true&rank_icon=github" alt="zym-plus GitHub stats" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zym-plus&layout=compact&theme=transparent&hide_border=true&langs_count=8" alt="zym-plus language stats" height="165" />
+<p>
+  <img src="https://img.shields.io/badge/Python-ffffff?style=flat-square&logo=python&logoColor=3776AB&labelColor=ffffff&color=e5e7eb" alt="Python" />
+  <img src="https://img.shields.io/badge/PyTorch-ffffff?style=flat-square&logo=pytorch&logoColor=EE4C2C&labelColor=ffffff&color=e5e7eb" alt="PyTorch" />
+  <img src="https://img.shields.io/badge/CUDA-ffffff?style=flat-square&logo=nvidia&logoColor=76B900&labelColor=ffffff&color=e5e7eb" alt="CUDA" />
+  <img src="https://img.shields.io/badge/OpenCV-ffffff?style=flat-square&logo=opencv&logoColor=5C3EE8&labelColor=ffffff&color=e5e7eb" alt="OpenCV" />
+  <img src="https://img.shields.io/badge/Linux-ffffff?style=flat-square&logo=linux&logoColor=111827&labelColor=ffffff&color=e5e7eb" alt="Linux" />
+  <img src="https://img.shields.io/badge/WSL-ffffff?style=flat-square&logo=windows&logoColor=0078D4&labelColor=ffffff&color=e5e7eb" alt="WSL" />
 </p>
 
-## Toolkit
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)
-![CUDA](https://img.shields.io/badge/CUDA-76B900?style=flat&logo=nvidia&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=111111)
-![WSL](https://img.shields.io/badge/WSL-0078D4?style=flat&logo=windows&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
-
-## Activity Dashboard
+<details>
+<summary>Generated activity panels</summary>
 
 <p align="center">
   <img src="./github-metrics.svg" alt="GitHub metrics" width="100%" />
 </p>
 
-<p align="center">
-  <img src="./profile-3d-contrib/profile-night-rainbow.svg" alt="3D contribution graph" width="100%" />
-</p>
-
-<details>
-<summary>Contribution animation</summary>
-
 ![Contribution snake](https://raw.githubusercontent.com/zym-plus/zym-plus/output/github-contribution-grid-snake.svg)
 
 </details>
-
-## Open-Source Components
-
-This profile uses open-source renderers as infrastructure, while the structure and visual language are customized for `zym-plus`.
-
-| Component | Role |
-|---|---|
-| [`lowlighter/metrics`](https://github.com/lowlighter/metrics) | Generates the compact GitHub metrics panel |
-| [`yoshi389111/github-profile-3d-contrib`](https://github.com/yoshi389111/github-profile-3d-contrib) | Generates the 3D contribution calendar |
-| [`Platane/snk`](https://github.com/Platane/snk) | Generates the contribution animation |
-| [`anuraghazra/github-readme-stats`](https://github.com/anuraghazra/github-readme-stats) | Provides dynamic stats and language cards |
 
