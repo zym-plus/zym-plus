@@ -69,7 +69,7 @@ Screenshot-assisted input, DeepSeek / Qwen routing, SQLite recovery, editable dr
 <a id="activity-in-3d"></a>
 ## 03 / Activity, in 3D
 
-`AUTO-REFRESHED` / a 365-day contribution session. Open the stage to inspect the underlying GitHub activity.
+`12-SECOND REPLAY` / the cursor moves from the oldest week to the latest, raising real contribution columns as their week is reached.
 
 <a href="https://github.com/zym-plus?tab=overview">
   <picture>
@@ -79,6 +79,8 @@ Screenshot-assisted input, DeepSeek / Qwen routing, SQLite recovery, editable dr
     <img src="./profile-3d-contrib/profile-green-loop.svg" width="100%" alt="Continuously animated 3D GitHub contribution history">
   </picture>
 </a>
+
+[Open source activity](https://github.com/zym-plus?tab=overview) / [Browse repositories](https://github.com/zym-plus?tab=repositories)
 
 ## 04 / Instruments
 

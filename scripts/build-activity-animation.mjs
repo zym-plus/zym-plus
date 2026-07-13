@@ -19,7 +19,10 @@ function stripAuxiliaryCharts(source) {
   return source.slice(0, radarStart) + source.slice(statsStart);
 }
 
-const stageSource = stripAuxiliaryCharts(lightSource);
+const stageSource = stripAuxiliaryCharts(lightSource).replace(
+  /<text style="font-size: 16px;" x="1260"[^>]*>[^<]*<\/text>/,
+  "",
+);
 
 function readFact(pattern, label) {
   const value = lightSource.match(pattern)?.[1];
@@ -35,6 +38,13 @@ const activityFacts = {
   language: readFact(/<title>([A-Za-z+#.-]+) \d+<\/title>/, "primary language"),
 };
 
+const dateRange = lightSource.match(/(\d{4}-\d{2}-\d{2}) \/ (\d{4}-\d{2}-\d{2})/);
+if (!dateRange) {
+  throw new Error("Unable to read the activity date range");
+}
+activityFacts.startDate = dateRange[1];
+activityFacts.endDate = dateRange[2];
+
 function getAttribute(tag, name) {
   return tag.match(new RegExp(`\\s${name}="([^"]*)"`))?.[1];
 }
@@ -47,7 +57,7 @@ function setAttribute(tag, name, value) {
   return tag.replace(/>$/, ` ${name}="${value}">`);
 }
 
-function makeLoopingTag(tag, delay) {
+function makeReplayTag(tag, progress) {
   const values = getAttribute(tag, "values")?.split(";");
   if (!values || values.length < 2) {
     return tag;
@@ -55,47 +65,22 @@ function makeLoopingTag(tag, delay) {
 
   const start = values[0];
   const end = values.at(-1);
-  let output = setAttribute(tag, "values", `${start};${end};${end};${start};${start}`);
-  output = setAttribute(output, "keyTimes", "0;0.14;0.62;0.78;1");
-  output = setAttribute(output, "dur", "9.6s");
-  output = setAttribute(output, "begin", `${delay}s`);
+  const riseStart = 0.08 + progress * 0.66;
+  const riseEnd = Math.min(riseStart + 0.035, 0.79);
+  let output = setAttribute(tag, "values", `${start};${start};${end};${end};${start};${start}`);
+  output = setAttribute(output, "keyTimes", `0;${riseStart.toFixed(3)};${riseEnd.toFixed(3)};0.84;0.91;1`);
+  output = setAttribute(output, "dur", "12s");
+  output = setAttribute(output, "begin", "0s");
   output = setAttribute(output, "repeatCount", "indefinite");
   return output;
 }
 
-function motionStyles({ green, blue, pink, acid, yellow, ink, muted, deck }) {
+function motionStyles({ green, blue, pink, acid, ink, muted }) {
   return `
-.activity-camera {
-  transform-box: view-box;
-  transform-origin: 50% 50%;
-  animation: activity-camera 9s ease-in-out infinite;
-}
-.activity-scan {
-  fill: none;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-dasharray: 11 44;
-  opacity: .7;
-  animation: activity-scan 6.2s linear infinite;
-}
-.activity-scan-a { stroke: ${blue}; }
-.activity-scan-b { stroke: ${pink}; }
-.activity-rail { fill: none; stroke: ${muted}; stroke-width: 1; stroke-dasharray: 3 13; opacity: .45; }
-.activity-playhead { fill: ${pink}; stroke: ${ink}; stroke-width: 2; }
-.activity-beacon {
-  fill: none;
-  stroke: ${pink};
-  stroke-width: 3;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: activity-beacon 2.6s ease-out infinite;
-}
 .activity-label { fill: ${ink}; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; letter-spacing: 0; }
 .activity-label-muted { fill: ${muted}; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; letter-spacing: 0; }
-.activity-led { fill: ${green}; animation: activity-led 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-.activity-deck { fill: ${deck}; }
+.activity-led { fill: ${green}; }
 .activity-acid { fill: ${acid}; }
-.activity-yellow { fill: ${yellow}; }
 .activity-blue { fill: ${blue}; }
 .activity-pink { fill: ${pink}; }
 .activity-ghost { fill: ${ink}; opacity: .055; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 92px; font-weight: 800; letter-spacing: 0; }
@@ -103,31 +88,22 @@ function motionStyles({ green, blue, pink, acid, yellow, ink, muted, deck }) {
 .activity-rule-blue { stroke: ${blue}; }
 .activity-rule-pink { stroke: ${pink}; }
 .activity-rule-acid { stroke: ${acid}; }
-.activity-meter { animation: activity-meter 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
-.activity-meter-b { animation-delay: -.32s; }
-.activity-meter-c { animation-delay: -.67s; }
-.activity-meter-d { animation-delay: -.96s; }
-@keyframes activity-camera {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-@keyframes activity-scan { to { stroke-dashoffset: -480; } }
-@keyframes activity-led { 0%, 100% { opacity: .35; transform: scale(.7); } 50% { opacity: 1; transform: scale(1); } }
-@keyframes activity-meter { 0%, 100% { transform: scaleY(.28); } 42% { transform: scaleY(1); } 74% { transform: scaleY(.56); } }
-@keyframes activity-beacon {
-  0% { opacity: .9; transform: scale(.65); }
-  75%, 100% { opacity: 0; transform: scale(2.2); }
-}
+.activity-progress-bg { fill: ${muted}; opacity: .2; }
+.activity-progress-live { fill: ${blue}; }
+.activity-week-plane { fill: ${pink}; fill-opacity: .12; stroke: ${pink}; stroke-width: 2; }
+.activity-week-line { stroke: ${pink}; stroke-width: 3; }
+.activity-cursor-dot { fill: ${pink}; stroke: ${ink}; stroke-width: 2; }
+.activity-legend-box { stroke: ${muted}; stroke-width: 1; }
 @media (prefers-reduced-motion: reduce) {
-  .activity-camera { animation: none; }
-  .activity-scan, .activity-beacon, .activity-playhead, .activity-led { display: none; }
-  .activity-meter { animation: none; }
+  .activity-week-cursor, .activity-progress-live { display: none; }
 }`;
 }
 
 function buildLoop(themeStyle, colors) {
+  const replayBlocks = [...stageSource.matchAll(/<animateTransform\b[^>]*>/g)]
+    .filter(([tag]) => getAttribute(tag, "attributeName") === "transform").length;
   let blockIndex = 0;
-  let currentDelay = "0";
+  let currentProgress = 0;
   let loopedTags = 0;
 
   let output = stageSource.replace(/<style>[\s\S]*?<\/style>/, `<style>${themeStyle}</style>`);
@@ -135,20 +111,15 @@ function buildLoop(themeStyle, colors) {
     const attributeName = getAttribute(tag, "attributeName");
 
     if (tag.startsWith("<animateTransform") && attributeName === "transform") {
-      currentDelay = ((blockIndex % 18) * 0.09).toFixed(2);
+      currentProgress = replayBlocks <= 1 ? 0 : blockIndex / (replayBlocks - 1);
       blockIndex += 1;
       loopedTags += 1;
-      return makeLoopingTag(tag, currentDelay);
+      return makeReplayTag(tag, currentProgress);
     }
 
     if (attributeName === "height") {
       loopedTags += 1;
-      return makeLoopingTag(tag, currentDelay);
-    }
-
-    if (attributeName === "points") {
-      loopedTags += 1;
-      return makeLoopingTag(tag, "0.55");
+      return makeReplayTag(tag, currentProgress);
     }
 
     return tag;
@@ -160,27 +131,18 @@ function buildLoop(themeStyle, colors) {
 
   output = output.replace("</style>", `${motionStyles(colors)}</style>`);
 
-  const backgroundEnd = output.indexOf("</rect>") + "</rect>".length;
-  if (backgroundEnd < "</rect>".length) {
-    throw new Error("Generated SVG has no background rectangle");
-  }
-
   const overlays = [
     '<rect class="activity-blue" x="0" y="0" width="14" height="850"/>',
-    '<g transform="translate(42 39)"><rect class="activity-acid" x="0" y="-19" width="206" height="26"/><text x="10" y="0" fill="#17181a" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="700">LIVE TAKE / ACTIVITY IN 3D</text><circle class="activity-led" cx="228" cy="-7" r="5"/><text class="activity-label-muted" x="244" y="-3">REC / 365 DAYS</text></g>',
+    '<g transform="translate(42 39)"><rect class="activity-acid" x="0" y="-19" width="242" height="26"/><text x="10" y="0" fill="#17181a" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="700">365-DAY CONTRIBUTION REPLAY</text><circle class="activity-led" cx="264" cy="-7" r="5"/><text class="activity-label-muted" x="280" y="-3">SOURCE / GITHUB</text></g>',
     '<text class="activity-ghost" x="1220" y="134" text-anchor="end">ACTIVITY</text>',
-    '<text class="activity-label-muted" x="1218" y="158" text-anchor="end">GITHUB CONTRIBUTION HISTORY / AUTO REFRESHED</text>',
+    '<text class="activity-label-muted" x="1218" y="158" text-anchor="end">ACTUAL CONTRIBUTION DAYS / CHRONOLOGICAL PLAYBACK</text>',
+    `<g transform="translate(42 82)"><text class="activity-label-muted" x="0" y="0">${activityFacts.startDate}</text><text class="activity-label-muted" x="1116" y="0" text-anchor="end">${activityFacts.endDate}</text><rect class="activity-progress-bg" x="0" y="14" width="1116" height="4"/><rect class="activity-progress-live" x="0" y="14" width="0" height="4"><animate attributeName="width" values="0;0;1116;1116;0" keyTimes="0;0.08;0.78;0.91;1" dur="12s" repeatCount="indefinite"/></rect><circle class="activity-pink activity-progress-live" cx="0" cy="16" r="6"><animateTransform attributeName="transform" type="translate" values="0 0;0 0;1116 0;1116 0;0 0" keyTimes="0;0.08;0.78;0.91;1" dur="12s" repeatCount="indefinite"/></circle><text class="activity-label-muted" x="0" y="40">WEEK 01 / OLDEST</text><text class="activity-label-muted" x="1116" y="40" text-anchor="end">WEEK 53 / LATEST</text></g>`,
     `<g transform="translate(790 208)"><text class="activity-label" x="0" y="0">SESSION NOTES / CURRENT TAKE</text><g transform="translate(0 29)"><path class="activity-rule-blue" d="M0 0V70" stroke-width="4"/><text class="activity-number" x="18" y="42">${activityFacts.commits}</text><text class="activity-label-muted" x="18" y="66">COMMITS</text></g><g transform="translate(145 29)"><path class="activity-rule-pink" d="M0 0V70" stroke-width="4"/><text class="activity-number" x="18" y="42">${activityFacts.repos}</text><text class="activity-label-muted" x="18" y="66">REPOSITORIES</text></g><g transform="translate(290 29)"><path class="activity-rule-acid" d="M0 0V70" stroke-width="4"/><text class="activity-number" x="18" y="42" style="font-size:32px">${activityFacts.language}</text><text class="activity-label-muted" x="18" y="66">PRIMARY LANGUAGE</text></g></g>`,
-    '<path class="activity-rail" d="M72 232 C370 410 770 570 1195 781"/>',
-    '<path class="activity-scan activity-scan-a" d="M72 232 C370 410 770 570 1195 781"/>',
-    '<path class="activity-scan activity-scan-b" d="M120 205 C430 382 830 535 1230 742" style="animation-delay:-3.1s"/>',
-    '<circle class="activity-playhead" r="7"><animateMotion path="M72 232 C370 410 770 570 1195 781" dur="6.2s" repeatCount="indefinite"/></circle>',
-    '<circle class="activity-beacon" cx="1120" cy="741" r="12"/>',
-    '<g transform="translate(48 720)"><text class="activity-label" x="0" y="0">SIDE A / CONSISTENCY OVER NOISE</text><text class="activity-label-muted" x="0" y="21">EACH COLUMN RISES, HOLDS, AND RETURNS FOR THE NEXT TAKE</text><g transform="translate(0 39)"><rect class="activity-acid activity-meter" x="0" y="0" width="10" height="34"/><rect class="activity-pink activity-meter activity-meter-b" x="17" y="0" width="10" height="34"/><rect class="activity-blue activity-meter activity-meter-c" x="34" y="0" width="10" height="34"/><rect class="activity-yellow activity-meter activity-meter-d" x="51" y="0" width="10" height="34"/></g></g>',
+    '<g class="activity-week-cursor" opacity="0"><path class="activity-week-plane" d="M148 137L9 217L9 229L148 149Z"/><path class="activity-week-line" d="M148 137L9 217"/><circle class="activity-cursor-dot" cx="79" cy="177" r="7"/><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.07;0.79;0.9;1" dur="12s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 0;1040 600;1040 600;0 0" keyTimes="0;0.08;0.78;0.91;1" dur="12s" repeatCount="indefinite"/></g>',
+    '<g transform="translate(48 700)"><text class="activity-label" x="0" y="0">CONTRIBUTION INTENSITY</text><text class="activity-label-muted" x="0" y="22">LESS</text><rect class="cont-top-0 activity-legend-box" x="42" y="9" width="18" height="18"/><rect class="cont-top-1 activity-legend-box" x="67" y="9" width="18" height="18"/><rect class="cont-top-2 activity-legend-box" x="92" y="9" width="18" height="18"/><rect class="cont-top-3 activity-legend-box" x="117" y="9" width="18" height="18"/><rect class="cont-top-4 activity-legend-box" x="142" y="9" width="18" height="18"/><text class="activity-label-muted" x="171" y="22">MORE</text><text class="activity-label" x="0" y="58">REPLAY ORDER / OLDEST WEEK -&gt; LATEST WEEK</text><text class="activity-label-muted" x="0" y="80">CLICK THE STAGE TO OPEN THE SOURCE ACTIVITY</text></g>',
   ].join("");
 
-  output = `${output.slice(0, backgroundEnd)}<g class="activity-camera">${output.slice(backgroundEnd)}`;
-  return output.replace("</svg>", `${overlays}</g></svg>`);
+  return output.replace("</svg>", `${overlays}</svg>`);
 }
 
 const darkStyle = darkSource.match(/<style>([\s\S]*?)<\/style>/)?.[1];
