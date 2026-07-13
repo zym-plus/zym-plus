@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">zym-plus research session</title>
+  <desc id="desc">An animated album-liner style introduction for an AI research engineer, with Ryo and Bocchi peeking from behind a research setlist.</desc>
+  <defs>
+    <clipPath id="character-window">
+      <path d="M748 44H1174V330H748Z"/>
+    </clipPath>
+  </defs>
+  <style>
+    :root { color-scheme: light dark; }
+    .paper { fill: #fbfbf8; }
+    .ink { fill: #17181a; }
+    .muted { fill: #59636e; }
+    .rule { stroke: #17181a; }
+    .soft-rule { stroke: #d7d9dc; }
+    .blue { fill: #2457ff; }
+    .pink { fill: #f4518b; }
+    .acid { fill: #c6ef42; }
+    .yellow { fill: #ffc857; }
+    .deck { fill: #17181a; }
+    .deck-ink { fill: #fbfbf8; }
+    .deck-muted { fill: #aab1bb; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0; }
+    .character-shell { transition: transform .35s cubic-bezier(.2,.8,.2,1); transform-origin: 960px 260px; }
+    .character-bob { animation: character-bob 6.4s ease-in-out infinite; transform-origin: 960px 220px; }
+    .paper-blue { animation: paper-blue 8s ease-in-out infinite; transform-origin: 965px 190px; }
+    .paper-pink { animation: paper-pink 7s ease-in-out infinite; transform-origin: 1010px 190px; }
+    .cable {
+      fill: none;
+      stroke: #2457ff;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 6 12;
+      animation: cable 9s linear infinite;
+    }
+    .cable-pink { stroke: #f4518b; animation-direction: reverse; animation-duration: 12s; }
+    .rec { animation: rec 2.2s steps(1) infinite; }
+    .level { animation: level 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+    .l2 { animation-delay: -.3s; }
+    .l3 { animation-delay: -.65s; }
+    .l4 { animation-delay: -.95s; }
+    .playhead { animation: playhead 8.6s cubic-bezier(.4,0,.2,1) infinite; }
+    .arrow { animation: arrow 1.8s ease-in-out infinite; }
+    svg:hover .character-shell { transform: translateY(-10px); }
+    @keyframes character-bob { 0%,100% { transform: translateY(0) rotate(-.15deg); } 50% { transform: translateY(-5px) rotate(.18deg); } }
+    @keyframes paper-blue { 0%,100% { transform: rotate(-2deg); } 50% { transform: rotate(.5deg) translateY(-3px); } }
+    @keyframes paper-pink { 0%,100% { transform: rotate(2.5deg); } 50% { transform: rotate(.3deg) translateY(3px); } }
+    @keyframes cable { to { stroke-dashoffset: -180; } }
+    @keyframes rec { 50% { opacity: .28; } }
+    @keyframes level { 0%,100% { transform: scaleY(.28); } 42% { transform: scaleY(1); } 72% { transform: scaleY(.58); } }
+    @keyframes playhead { 0%,8% { transform: translateX(0); opacity: 0; } 14%,88% { opacity: 1; } 94%,100% { transform: translateX(1030px); opacity: 0; } }
+    @keyframes arrow { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+    @media (prefers-color-scheme: dark) {
+      .paper { fill: #0d1117; }
+      .ink { fill: #f0f6fc; }
+      .muted { fill: #9da7b3; }
+      .rule { stroke: #f0f6fc; }
+      .soft-rule { stroke: #30363d; }
+      .blue { fill: #5b8cff; }
+      .pink { fill: #ff78aa; }
+      .acid { fill: #d7f75b; }
+      .yellow { fill: #ffd166; }
+      .cable { stroke: #5b8cff; }
+      .cable-pink { stroke: #ff78aa; }
+      .deck { fill: #161b22; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .character-bob, .paper-blue, .paper-pink, .cable, .rec, .level, .playhead, .arrow { animation: none; }
+      .playhead { transform: translateX(515px); opacity: .7; }
+    }
+  </style>
+
+  <rect class="paper" width="1200" height="500"/>
+  <rect class="blue" width="14" height="330"/>
+  <path class="soft-rule" d="M42 55H1158"/>
+
+  <g class="mono" font-size="13">
+    <text class="ink" x="42" y="34" font-weight="700">ZYM / RESEARCH SETLIST</text>
+    <text class="muted" x="600" y="34" text-anchor="middle">AI RESEARCH ENGINEER / TAKE 026</text>
+    <circle class="pink rec" cx="1074" cy="29" r="5"/>
+    <text class="ink" x="1158" y="34" text-anchor="end" font-weight="700">REC / UTC+8</text>
+  </g>
+
+  <g transform="translate(48 92)">
+    <rect class="acid" x="0" y="-20" width="168" height="25"/>
+    <text class="ink mono" x="8" y="-3" font-size="12" font-weight="700">NOISE IN / EVIDENCE OUT</text>
+    <text class="ink sans" x="0" y="91" font-size="86" font-weight="800">zym-plus</text>
+    <text class="ink sans" x="2" y="139" font-size="29" font-weight="700">I make uncertain ideas prove themselves.</text>
+    <text class="muted mono" x="2" y="176" font-size="15">FORECASTING / OPEN-WORLD PERCEPTION / REPRODUCIBLE GPU SYSTEMS</text>
+    <g transform="translate(2 208)" class="mono" font-size="13">
+      <rect class="pink" width="12" height="12"/>
+      <text class="ink" x="22" y="11">CURRENT: ETTh1 336 -&gt; 336</text>
+      <rect class="blue" x="238" width="12" height="12"/>
+      <text class="ink" x="260" y="11">PAPER: YOLO-IOD / AAAI 2026</text>
+    </g>
+  </g>
+
+  <g clip-path="url(#character-window)">
+    <path class="blue paper-blue" d="M838 65L1125 43L1158 264L854 285Z" opacity=".9"/>
+    <path class="pink paper-pink" d="M880 76L1178 90L1154 284L852 270Z" opacity=".82"/>
+    <path class="cable cable-pink" d="M735 246C808 155 876 310 954 183S1090 88 1184 150"/>
+    <g class="character-shell">
+      <g class="character-bob">
+        <image href="data:image/png;base64,{{CHARACTER_DATA}}" x="790" y="55" width="370" height="370"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <rect class="paper" x="748" y="222" width="426" height="108"/>
+    <path class="soft-rule" d="M770 244H1158"/>
+    <text class="ink mono" x="1158" y="275" text-anchor="end" font-size="12" font-weight="700">RYO + BOCCHI / PEEK TRACK</text>
+    <text class="muted mono" x="1158" y="296" text-anchor="end" font-size="10">HOVER THE SESSION / KEEP THE WORK IN FRONT</text>
+  </g>
+
+  <g transform="translate(0 330)">
+    <rect class="deck" width="1200" height="170"/>
+    <path d="M42 42H1158" stroke="#4d535c"/>
+    <path class="cable" d="M42 42C164 12 274 70 396 40S630 18 754 43S1000 68 1158 33"/>
+    <g class="playhead" transform="translate(52 0)">
+      <path d="M0 23V61" stroke="#f4518b" stroke-width="2"/>
+      <circle cx="0" cy="42" r="5" fill="#f4518b"/>
+    </g>
+
+    <g transform="translate(42 78)" class="mono">
+      <g>
+        <text class="acid" x="0" y="0" font-size="12" font-weight="700">TRACK 01 / FORECAST</text>
+        <text class="deck-ink" x="0" y="28" font-size="18" font-weight="700">Strong baselines. Small mechanisms.</text>
+        <text class="deck-muted" x="0" y="51" font-size="12">fair splits / multi-seed / ablation</text>
+      </g>
+      <g transform="translate(390 0)">
+        <text class="pink" x="0" y="0" font-size="12" font-weight="700">TRACK 02 / PERCEIVE</text>
+        <text class="deck-ink" x="0" y="28" font-size="18" font-weight="700">Open worlds. Inspectable results.</text>
+        <text class="deck-muted" x="0" y="51" font-size="12">detection / restoration / 3D</text>
+      </g>
+      <g transform="translate(780 0)">
+        <text class="blue" x="0" y="0" font-size="12" font-weight="700">TRACK 03 / SYSTEMS</text>
+        <text class="deck-ink" x="0" y="28" font-size="18" font-weight="700">Local first. Repeatable by default.</text>
+        <text class="deck-muted" x="0" y="51" font-size="12">GPU runs / tooling / reports</text>
+      </g>
+    </g>
+
+    <g transform="translate(1080 78)">
+      <rect class="acid level" x="0" y="22" width="8" height="27"/>
+      <rect class="pink level l2" x="14" y="14" width="8" height="35"/>
+      <rect class="blue level l3" x="28" y="6" width="8" height="43"/>
+      <rect class="yellow level l4" x="42" y="18" width="8" height="31"/>
+    </g>
+    <g class="arrow" transform="translate(1150 139)">
+      <path d="M0-8V5M-5 0L0 5L5 0" fill="none" stroke="#fbfbf8" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

@@ -1,74 +1,75 @@
 <div align="center">
 
-<a href="#research-deck">
+<a href="#now-playing">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/signal-lab-mobile.svg">
-    <img src="./assets/signal-lab.svg" width="100%" alt="ZYM Signal Lab: AI research engineering across forecasting, open-world perception, and reproducible systems">
+    <source media="(max-width: 640px)" srcset="./assets/research-session-mobile.svg">
+    <img src="./assets/research-session.svg" width="100%" alt="zym-plus research setlist with Ryo and Bocchi peeking from behind the session notes">
   </picture>
 </a>
 
-[Research deck](#research-deck) · [Selected work](#selected-work) · [Live signal](#live-signal) · [Repositories](https://github.com/zym-plus?tab=repositories) · [Email](mailto:zymhandsomeman@gmail.com)
+[Now playing](#now-playing) / [Work on record](#work-on-record) / [Activity in 3D](#activity-in-3d) / [Repositories](https://github.com/zym-plus?tab=repositories) / [Email](mailto:zymhandsomeman@gmail.com)
 
 </div>
 
-**AI research engineer** working across long-horizon forecasting, open-world perception, and reproducible GPU systems. I build the smallest mechanism that can answer a real research question, test it against strong baselines, and ship the tooling needed to inspect the result.
+**AI research engineer** working across long-horizon forecasting, open-world perception, and reproducible GPU systems. I reduce an idea to its smallest testable mechanism, compare it fairly, and build the tooling needed to inspect the result.
 
-<a id="research-deck"></a>
-## Research deck
+<a id="now-playing"></a>
+## 01 / Now playing
 
 <details open>
-<summary><b>CH 01 / FORECASTING</b> · lightweight mechanisms, hard baselines</summary>
+<summary><b>TRACK 01 / FORECASTING</b> - small mechanisms, hard baselines</summary>
 <br>
 
-Long-horizon forecasting in `Time-Series-Library`, currently centered on ETTh1 `336 → 336`.
+Current session: long-horizon forecasting in [`Time-Series-Library`](https://github.com/thuml/Time-Series-Library), centered on ETTh1 `336 -> 336`.
 
-- **Question:** can a small, interpretable mechanism beat a strong local baseline without hiding behind extra budget or preprocessing?
-- **Evidence contract:** fair splits and metrics, seed 1 as signal only, then multi-seed confirmation and contribution-source ablation.
-- **Decision rule:** keep the mechanism only when the claimed component, not normalization or training protocol, explains the gain.
+- **Question:** can a lightweight mechanism earn its complexity against a strong local baseline?
+- **Method:** same split, metric, seed, and budget; fast falsification before long training.
+- **Proof required:** multi-seed confirmation and a contribution-source ablation, not one lucky run.
 
 </details>
 
 <details>
-<summary><b>CH 02 / PERCEPTION</b> · open-world detection, restoration, and 3D</summary>
+<summary><b>TRACK 02 / PERCEPTION</b> - open worlds, visible evidence</summary>
 <br>
 
-- [`YOLO-IOD`](https://github.com/zym-plus/yolo-iod) — AAAI 2026 Poster codebase for real-time incremental object detection and the LOCO COCO benchmark.
-- [`PB / PROB`](https://github.com/zym-plus/PB) — CVPR 2023 open-world detector reproduction with server-aware GPU smoke tests, staged M-OWODB runs, and inspectable result tables.
-- **Current edge:** image restoration and deblurring-aware 3D Gaussian Splatting pipelines.
+- **Incremental detection:** [`YOLO-IOD`](https://github.com/zym-plus/yolo-iod), an AAAI 2026 Poster codebase with LOCO COCO and CPR / IKS / CAKD training paths.
+- **Open-world reproduction:** [`PB / PROB`](https://github.com/zym-plus/PB) with real-data GPU smoke tests, staged M-OWODB runs, and HTML / CSV comparisons.
+- **Current edge:** image restoration and deblurring-aware 3D Gaussian Splatting.
 
 </details>
 
 <details>
-<summary><b>CH 03 / SYSTEMS</b> · local-first tools that make research repeatable</summary>
+<summary><b>TRACK 03 / SYSTEMS</b> - local first, repeatable by default</summary>
 <br>
 
-- [`Light Quant Copilot`](https://github.com/zym-plus/automated-stock-analysis) — a local AI workflow for morning briefs, risk control, and post-market review with editable drafts and Word export.
-- **Research operations:** isolated environments, scripted GPU runs, structured logs, smoke tests, result summaries, and explicit stop / hold / go decisions.
-- **Default stack:** Python, PyTorch, CUDA, OpenCV, Linux / WSL, Bash, SQLite, Streamlit, and GitHub Actions.
+- [`Light Quant Copilot`](https://github.com/zym-plus/automated-stock-analysis) turns screenshots and local market data into editable research briefs and Word reports.
+- Research runs use isolated environments, scripted GPU jobs, smoke tests, structured logs, and explicit stop / hold / go decisions.
+- The goal is simple: another person should be able to understand what ran, what changed, and why the result matters.
 
 </details>
 
-<picture>
-  <source media="(max-width: 640px)" srcset="./assets/research-score-mobile.svg">
-  <img src="./assets/research-score.svg" width="100%" alt="Research score: literature, contradiction, mechanism, falsification, ablation, and decision">
-</picture>
+<a id="work-on-record"></a>
+## 02 / Work on record
 
-<a id="selected-work"></a>
-## Selected work
+### `PAPER / 01` [YOLO-IOD](https://github.com/zym-plus/yolo-iod)
 
-- **`01 / PAPER` [YOLO-IOD](https://github.com/zym-plus/yolo-iod)** · [paper](https://arxiv.org/abs/2512.22973)<br>
-  Official PyTorch implementation, LOCO COCO splits, CPR / IKS / CAKD training paths, and reproducible evaluation.
-- **`02 / REPRO` [PB / PROB](https://github.com/zym-plus/PB)** · [paper](https://arxiv.org/abs/2212.01424)<br>
-  Open-world detection baseline, real-data GPU smoke test, staged experiment runner, and HTML / CSV comparison output.
-- **`03 / PRODUCT` [Light Quant Copilot](https://github.com/zym-plus/automated-stock-analysis)**<br>
-  Local-only data, screenshot-assisted input, DeepSeek / Qwen routing, SQLite recovery, editable reports, and `.docx` export.
-- **`04 / RESEARCH` Forecasting lab**<br>
-  Strong-baseline screening, novelty audit, minimal falsification, multiple seeds, and contribution-source ablation before any claim.
+**Real-time incremental object detection** - [AAAI 2026 paper](https://arxiv.org/abs/2512.22973)<br>
+Official PyTorch implementation, LOCO COCO splits, reproducible evaluation, and explicit CPR / IKS / CAKD experiment paths.
 
-<a id="live-signal"></a>
-## Live signal
+### `REPRO / 02` [PB / PROB](https://github.com/zym-plus/PB)
 
-`AUTO-REFRESHED` · GitHub contribution history rendered as a continuously moving 3D signal stage.
+**Open-world object detection workbench** - [CVPR 2023 paper](https://arxiv.org/abs/2212.01424)<br>
+Server-aware setup, real-data GPU smoke testing, staged M-OWODB orchestration, and inspectable HTML / CSV result output.
+
+### `PRODUCT / 03` [Light Quant Copilot](https://github.com/zym-plus/automated-stock-analysis)
+
+**A local-first market research workflow**<br>
+Screenshot-assisted input, DeepSeek / Qwen routing, SQLite recovery, editable drafts, and `.docx` export for morning, risk, and post-market review.
+
+<a id="activity-in-3d"></a>
+## 03 / Activity, in 3D
+
+`AUTO-REFRESHED` / a 365-day contribution session. Open the stage to inspect the underlying GitHub activity.
 
 <a href="https://github.com/zym-plus?tab=overview">
   <picture>
@@ -79,13 +80,13 @@ Long-horizon forecasting in `Time-Series-Library`, currently centered on ETTh1 `
   </picture>
 </a>
 
-## Working stack
+## 04 / Instruments
 
-- **Modeling:** `Python` · `PyTorch`
-- **Compute:** `CUDA` · `Linux / WSL`
-- **Perception:** `OpenCV` · detection · 3DGS
-- **Research operations:** `Bash` · `SQLite` · `GitHub Actions`
+- **Modeling:** `Python` / `PyTorch`
+- **Compute:** `CUDA` / `Linux` / `WSL` / `Bash`
+- **Perception:** `OpenCV` / object detection / restoration / 3DGS
+- **Research operations:** `SQLite` / `Streamlit` / `GitHub Actions`
 
-## Open channel
+## 05 / Open channel
 
-Research collaboration, reproducibility questions, or engineering work around forecasting, vision, and GPU workflows: **[zymhandsomeman@gmail.com](mailto:zymhandsomeman@gmail.com)**.
+Research collaboration, reproducibility questions, or engineering work around forecasting, perception, and GPU workflows: **[zymhandsomeman@gmail.com](mailto:zymhandsomeman@gmail.com)**.
