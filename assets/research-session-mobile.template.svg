@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 690" role="img" aria-labelledby="title desc">
   <title id="title">zym-plus mobile research session</title>
-  <desc id="desc">A compact animated research setlist with Ryo and Bocchi peeking from behind it.</desc>
+  <desc id="desc">A compact animated research setlist with Ryo and Bocchi in a half-pull session card.</desc>
   <defs>
     <clipPath id="character-window"><path d="M330 42H700V370H330Z"/></clipPath>
   </defs>
@@ -19,6 +19,10 @@
     .deck-muted { fill: #aab1bb; }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0; }
     .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0; }
+    .character-drawer { animation: drawer-mobile 9s cubic-bezier(.22,1,.36,1) infinite; transform: translate(34px, 22px); transform-origin: 520px 210px; }
+    .character-card { fill: #fbfbf8; stroke: #17181a; stroke-width: 1.5; }
+    .character-card-edge { fill: #17181a; opacity: .12; }
+    .drawer-label { fill: #17181a; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 9px; font-weight: 700; letter-spacing: 0; }
     .character-bob { animation: character-bob 6.4s ease-in-out infinite; transform-origin: 520px 220px; }
     .paper-blue { animation: paper-blue 8s ease-in-out infinite; transform-origin: 520px 190px; }
     .paper-pink { animation: paper-pink 7s ease-in-out infinite; transform-origin: 560px 190px; }
@@ -29,6 +33,7 @@
     .l2 { animation-delay: -.3s; }
     .l3 { animation-delay: -.65s; }
     .playhead { animation: playhead 8.6s cubic-bezier(.4,0,.2,1) infinite; }
+    @keyframes drawer-mobile { 0%,12%,52%,100% { transform: translate(34px, 22px); } 23%,39% { transform: translate(4px, -2px); } }
     @keyframes character-bob { 0%,100% { transform: translateY(0) rotate(-.15deg); } 50% { transform: translateY(-5px) rotate(.18deg); } }
     @keyframes paper-blue { 0%,100% { transform: rotate(-2deg); } 50% { transform: rotate(.5deg) translateY(-3px); } }
     @keyframes paper-pink { 0%,100% { transform: rotate(2.5deg); } 50% { transform: rotate(.3deg) translateY(3px); } }
@@ -50,7 +55,7 @@
       .deck { fill: #161b22; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .character-bob, .paper-blue, .paper-pink, .cable, .rec, .level, .playhead { animation: none; }
+      .character-drawer, .character-bob, .paper-blue, .paper-pink, .cable, .rec, .level, .playhead { animation: none; }
       .playhead { transform: translateX(305px); opacity: .7; }
     }
   </style>
@@ -74,18 +79,24 @@
   </g>
 
   <g clip-path="url(#character-window)">
-    <path class="blue paper-blue" d="M410 68L665 47L694 284L417 302Z" opacity=".9"/>
-    <path class="pink paper-pink" d="M444 76L709 93L688 307L420 292Z" opacity=".82"/>
-    <path class="cable cable-pink" d="M321 263C379 178 432 317 495 198S611 97 704 157"/>
-    <g class="character-bob">
-      <image href="data:image/png;base64,{{CHARACTER_DATA}}" x="390" y="70" width="310" height="310"/>
+    <g class="character-drawer">
+      <path class="character-card-edge" d="M398 62H694V322H398Z" transform="translate(7 8)"/>
+      <path class="blue paper-blue" d="M410 68L665 47L694 284L417 302Z" opacity=".9"/>
+      <path class="pink paper-pink" d="M444 76L709 93L688 307L420 292Z" opacity=".82"/>
+      <rect class="character-card" x="398" y="62" width="296" height="260"/>
+      <rect class="acid" x="414" y="52" width="104" height="22"/>
+      <text class="drawer-label" x="424" y="67">SIDE B / PULL</text>
+      <path class="cable cable-pink" d="M321 263C379 178 432 317 495 198S611 97 704 157"/>
+      <g class="character-bob">
+        <image href="data:image/png;base64,{{CHARACTER_DATA}}" x="390" y="70" width="310" height="310"/>
+      </g>
     </g>
   </g>
   <g>
     <rect class="paper" x="330" y="238" width="370" height="132"/>
     <path class="soft-rule" d="M350 262H690"/>
     <text class="ink mono" x="690" y="291" text-anchor="end" font-size="10" font-weight="700">RYO + BOCCHI / PEEK TRACK</text>
-    <text class="muted mono" x="690" y="312" text-anchor="end" font-size="9">THE WORK STAYS IN FRONT</text>
+    <text class="muted mono" x="690" y="312" text-anchor="end" font-size="9">HALF-PULL LOOP / WORK IN FRONT</text>
   </g>
 
   <g transform="translate(0 370)">

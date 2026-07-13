@@ -3,7 +3,7 @@
 <a href="#now-playing">
   <picture>
     <source media="(max-width: 640px)" srcset="./assets/research-session-mobile.svg">
-    <img src="./assets/research-session.svg" width="100%" alt="zym-plus research setlist with Ryo and Bocchi peeking from behind the session notes">
+    <img src="./assets/research-session.svg" width="100%" alt="zym-plus research setlist with Ryo and Bocchi in a half-pull session card">
   </picture>
 </a>
 
@@ -69,7 +69,7 @@ Screenshot-assisted input, DeepSeek / Qwen routing, SQLite recovery, editable dr
 <a id="activity-in-3d"></a>
 ## 03 / Activity, in 3D
 
-`12-SECOND REPLAY` / the cursor moves from the oldest week to the latest, raising real contribution columns as their week is reached.
+`12-SECOND REPLAY` / a note tracks the year while a particle sweep raises each real contribution week in order.
 
 <a href="https://github.com/zym-plus?tab=overview">
   <picture>

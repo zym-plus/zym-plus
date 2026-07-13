@@ -90,13 +90,50 @@ function motionStyles({ green, blue, pink, acid, ink, muted }) {
 .activity-rule-acid { stroke: ${acid}; }
 .activity-progress-bg { fill: ${muted}; opacity: .2; }
 .activity-progress-live { fill: ${blue}; }
-.activity-week-plane { fill: ${pink}; fill-opacity: .12; stroke: ${pink}; stroke-width: 2; }
-.activity-week-line { stroke: ${pink}; stroke-width: 3; }
-.activity-cursor-dot { fill: ${pink}; stroke: ${ink}; stroke-width: 2; }
+.activity-progress-note { fill: ${blue}; }
+.activity-particle-guide { fill: none; stroke: ${pink}; stroke-width: 1; opacity: .16; }
+.activity-particle-ribbon { fill: none; stroke: ${pink}; stroke-width: 2; stroke-linecap: round; opacity: .7; }
+.activity-particle { fill: ${pink}; }
 .activity-legend-box { stroke: ${muted}; stroke-width: 1; }
 @media (prefers-reduced-motion: reduce) {
-  .activity-week-cursor, .activity-progress-live { display: none; }
+  .activity-week-cursor, .activity-progress-live, .activity-progress-note { display: none; }
 }`;
+}
+
+function buildParticleStream() {
+  const tracks = [
+    "M148 137L9 217",
+    "M148 140L9 220",
+    "M148 143L9 223",
+    "M148 146L9 226",
+    "M148 149L9 229",
+  ];
+  const particles = [
+    [0, 1.35, -0.10, 8, 2, 1.00],
+    [1, 1.70, -0.34, 5, 2, 0.82],
+    [2, 1.95, -0.58, 7, 2, 0.70],
+    [3, 1.55, -0.77, 4, 3, 0.78],
+    [4, 2.10, -1.02, 9, 2, 0.92],
+    [1, 1.45, -1.18, 5, 2, 0.64],
+    [2, 1.85, -1.34, 6, 2, 0.86],
+    [3, 1.42, -1.55, 4, 2, 0.72],
+    [4, 2.20, -1.78, 8, 2, 0.88],
+    [0, 1.62, -1.96, 5, 3, 0.66],
+    [1, 1.88, -2.14, 7, 2, 0.78],
+    [2, 1.58, -2.36, 4, 2, 0.94],
+    [3, 1.74, -2.58, 6, 2, 0.84],
+    [4, 2.05, -2.76, 5, 3, 0.72],
+  ];
+
+  const ribbon = tracks.map((path, index) => (
+    `<path class="activity-particle-ribbon" d="${path}" stroke-dasharray="${index % 2 ? "1 10 5 17 2 12" : "5 13 1 9 3 18"}" opacity="${(0.42 + index * 0.08).toFixed(2)}"><animate attributeName="stroke-dashoffset" values="0;-120" dur="${(1.25 + index * 0.17).toFixed(2)}s" repeatCount="indefinite"/></path>`
+  )).join("");
+
+  const movingParticles = particles.map(([track, duration, begin, width, height, opacity]) => (
+    `<g opacity="${opacity}"><path class="activity-particle" d="M${-width / 2} ${-height / 2}H${width / 2}L${width / 2 + 2} 0L${width / 2} ${height / 2}H${-width / 2}L${-width / 2 - 2} 0Z"/><animateMotion path="${tracks[track]}" rotate="auto" dur="${duration}s" begin="${begin}s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;.82;0" keyTimes="0;.12;.76;1" dur="${duration}s" begin="${begin}s" repeatCount="indefinite"/></g>`
+  )).join("");
+
+  return `<g class="activity-week-cursor" opacity="0"><path class="activity-particle-guide" d="M148 137L9 217M148 149L9 229"/>${ribbon}${movingParticles}<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.07;0.79;0.9;1" dur="12s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 0;1040 600;1040 600;0 0" keyTimes="0;0.08;0.78;0.91;1" dur="12s" repeatCount="indefinite"/></g>`;
 }
 
 function buildLoop(themeStyle, colors) {
@@ -136,9 +173,9 @@ function buildLoop(themeStyle, colors) {
     '<g transform="translate(42 39)"><rect class="activity-acid" x="0" y="-19" width="242" height="26"/><text x="10" y="0" fill="#17181a" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="700">365-DAY CONTRIBUTION REPLAY</text><circle class="activity-led" cx="264" cy="-7" r="5"/><text class="activity-label-muted" x="280" y="-3">SOURCE / GITHUB</text></g>',
     '<text class="activity-ghost" x="1220" y="134" text-anchor="end">ACTIVITY</text>',
     '<text class="activity-label-muted" x="1218" y="158" text-anchor="end">ACTUAL CONTRIBUTION DAYS / CHRONOLOGICAL PLAYBACK</text>',
-    `<g transform="translate(42 82)"><text class="activity-label-muted" x="0" y="0">${activityFacts.startDate}</text><text class="activity-label-muted" x="1116" y="0" text-anchor="end">${activityFacts.endDate}</text><rect class="activity-progress-bg" x="0" y="14" width="1116" height="4"/><rect class="activity-progress-live" x="0" y="14" width="0" height="4"><animate attributeName="width" values="0;0;1116;1116;0" keyTimes="0;0.08;0.78;0.91;1" dur="12s" repeatCount="indefinite"/></rect><circle class="activity-pink activity-progress-live" cx="0" cy="16" r="6"><animateTransform attributeName="transform" type="translate" values="0 0;0 0;1116 0;1116 0;0 0" keyTimes="0;0.08;0.78;0.91;1" dur="12s" repeatCount="indefinite"/></circle><text class="activity-label-muted" x="0" y="40">WEEK 01 / OLDEST</text><text class="activity-label-muted" x="1116" y="40" text-anchor="end">WEEK 53 / LATEST</text></g>`,
+    `<g transform="translate(42 82)"><text class="activity-label-muted" x="0" y="0">${activityFacts.startDate}</text><text class="activity-label-muted" x="1116" y="0" text-anchor="end">${activityFacts.endDate}</text><rect class="activity-progress-bg" x="0" y="14" width="1116" height="4"/><rect class="activity-progress-live" x="0" y="14" width="0" height="4"><animate attributeName="width" values="0;0;1116;1116;0" keyTimes="0;0.08;0.78;0.91;1" dur="12s" repeatCount="indefinite"/></rect><g class="activity-progress-note"><animateTransform attributeName="transform" type="translate" values="0 0;0 0;1116 0;1116 0;0 0" keyTimes="0;0.08;0.78;0.91;1" dur="12s" repeatCount="indefinite"/><path d="M3 0V17C1 15-2 15-4 16C-8 17-9 21-6 23C-3 25 3 23 5 20V6C10 7 13 10 14 14C15 8 11 3 3 0Z" transform="translate(-2 -7)"/></g><text class="activity-label-muted" x="0" y="40">WEEK 01 / OLDEST</text><text class="activity-label-muted" x="1116" y="40" text-anchor="end">WEEK 53 / LATEST</text></g>`,
     `<g transform="translate(790 208)"><text class="activity-label" x="0" y="0">SESSION NOTES / CURRENT TAKE</text><g transform="translate(0 29)"><path class="activity-rule-blue" d="M0 0V70" stroke-width="4"/><text class="activity-number" x="18" y="42">${activityFacts.commits}</text><text class="activity-label-muted" x="18" y="66">COMMITS</text></g><g transform="translate(145 29)"><path class="activity-rule-pink" d="M0 0V70" stroke-width="4"/><text class="activity-number" x="18" y="42">${activityFacts.repos}</text><text class="activity-label-muted" x="18" y="66">REPOSITORIES</text></g><g transform="translate(290 29)"><path class="activity-rule-acid" d="M0 0V70" stroke-width="4"/><text class="activity-number" x="18" y="42" style="font-size:32px">${activityFacts.language}</text><text class="activity-label-muted" x="18" y="66">PRIMARY LANGUAGE</text></g></g>`,
-    '<g class="activity-week-cursor" opacity="0"><path class="activity-week-plane" d="M148 137L9 217L9 229L148 149Z"/><path class="activity-week-line" d="M148 137L9 217"/><circle class="activity-cursor-dot" cx="79" cy="177" r="7"/><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.07;0.79;0.9;1" dur="12s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0 0;0 0;1040 600;1040 600;0 0" keyTimes="0;0.08;0.78;0.91;1" dur="12s" repeatCount="indefinite"/></g>',
+    buildParticleStream(),
     '<g transform="translate(48 700)"><text class="activity-label" x="0" y="0">CONTRIBUTION INTENSITY</text><text class="activity-label-muted" x="0" y="22">LESS</text><rect class="cont-top-0 activity-legend-box" x="42" y="9" width="18" height="18"/><rect class="cont-top-1 activity-legend-box" x="67" y="9" width="18" height="18"/><rect class="cont-top-2 activity-legend-box" x="92" y="9" width="18" height="18"/><rect class="cont-top-3 activity-legend-box" x="117" y="9" width="18" height="18"/><rect class="cont-top-4 activity-legend-box" x="142" y="9" width="18" height="18"/><text class="activity-label-muted" x="171" y="22">MORE</text><text class="activity-label" x="0" y="58">REPLAY ORDER / OLDEST WEEK -&gt; LATEST WEEK</text><text class="activity-label-muted" x="0" y="80">CLICK THE STAGE TO OPEN THE SOURCE ACTIVITY</text></g>',
   ].join("");
 
