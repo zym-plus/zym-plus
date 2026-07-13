@@ -8,10 +8,17 @@
 
 [Selected work](#selected-work) · [Repositories](https://github.com/zym-plus?tab=repositories) · [Email](mailto:zymhandsomeman@gmail.com)
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/bocchi-ryo-static.png">
-  <img src="./assets/bocchi-ryo-interaction.gif" width="410" alt="Ryo Yamada and Bocchi standing together with a bass guitar">
-</picture>
+<a href="#selected-work">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/bocchi-ryo-static.png">
+    <img src="./assets/bocchi-ryo-live.svg" width="460" alt="Ryo Yamada and Bocchi in an animated music interaction">
+  </picture>
+</a>
+
+<details>
+<summary><b>NOW</b> / active research</summary>
+<p><code>Forecasting</code> ETTh1 336 → 336 &nbsp;·&nbsp; <code>Vision</code> open-world detection + deblurring 3DGS</p>
+</details>
 
 </div>
 
@@ -28,10 +35,12 @@ Local-first AI workflows, GPU automation, structured experiments, and inspectabl
 
 ## Activity, in 3D
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-green.svg">
-  <img src="./profile-3d-contrib/profile-green-animate.svg" width="100%" alt="Animated 3D GitHub contribution history">
-</picture>
+<a href="https://github.com/zym-plus?tab=overview">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-green.svg">
+    <img src="./profile-3d-contrib/profile-green-animate.svg" width="100%" alt="Animated 3D GitHub contribution history">
+  </picture>
+</a>
 
 ## Stack
 
