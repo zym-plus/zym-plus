@@ -37,8 +37,10 @@ Local-first AI workflows, GPU automation, structured experiments, and inspectabl
 
 <a href="https://github.com/zym-plus?tab=overview">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-green.svg">
-    <img src="./profile-3d-contrib/profile-green-animate.svg" width="100%" alt="Animated 3D GitHub contribution history">
+    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-green.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./profile-3d-contrib/profile-green.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-green-loop.svg">
+    <img src="./profile-3d-contrib/profile-green-loop.svg" width="100%" alt="Continuously animated 3D GitHub contribution history">
   </picture>
 </a>
 

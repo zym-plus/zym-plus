@@ -22,6 +22,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+      - name: Build looping activity assets
+        run: node scripts/build-activity-animation.mjs
       - name: Commit changed asset
         run: |
           git config user.name github-actions[bot]
