@@ -56,12 +56,14 @@ Long-horizon forecasting in `Time-Series-Library`, currently centered on ETTh1 `
 <a id="selected-work"></a>
 ## Selected work
 
-| Track | Work | What to inspect |
-|:--|:--|:--|
-| `01 / PAPER` | **[YOLO-IOD](https://github.com/zym-plus/yolo-iod)** · [paper](https://arxiv.org/abs/2512.22973) | Official PyTorch implementation, LOCO COCO splits, CPR / IKS / CAKD training paths, and reproducible evaluation. |
-| `02 / REPRO` | **[PB / PROB](https://github.com/zym-plus/PB)** · [paper](https://arxiv.org/abs/2212.01424) | Open-world detection baseline, real-data GPU smoke test, staged experiment runner, and HTML / CSV comparison output. |
-| `03 / PRODUCT` | **[Light Quant Copilot](https://github.com/zym-plus/automated-stock-analysis)** | Local-only data, screenshot-assisted input, DeepSeek / Qwen routing, SQLite recovery, editable reports, and `.docx` export. |
-| `04 / RESEARCH` | **Forecasting lab** | Strong-baseline screening, novelty audit, minimal falsification, multiple seeds, and contribution-source ablation before any claim. |
+- **`01 / PAPER` [YOLO-IOD](https://github.com/zym-plus/yolo-iod)** · [paper](https://arxiv.org/abs/2512.22973)<br>
+  Official PyTorch implementation, LOCO COCO splits, CPR / IKS / CAKD training paths, and reproducible evaluation.
+- **`02 / REPRO` [PB / PROB](https://github.com/zym-plus/PB)** · [paper](https://arxiv.org/abs/2212.01424)<br>
+  Open-world detection baseline, real-data GPU smoke test, staged experiment runner, and HTML / CSV comparison output.
+- **`03 / PRODUCT` [Light Quant Copilot](https://github.com/zym-plus/automated-stock-analysis)**<br>
+  Local-only data, screenshot-assisted input, DeepSeek / Qwen routing, SQLite recovery, editable reports, and `.docx` export.
+- **`04 / RESEARCH` Forecasting lab**<br>
+  Strong-baseline screening, novelty audit, minimal falsification, multiple seeds, and contribution-source ablation before any claim.
 
 <a id="live-signal"></a>
 ## Live signal
@@ -79,9 +81,10 @@ Long-horizon forecasting in `Time-Series-Library`, currently centered on ETTh1 `
 
 ## Working stack
 
-| Modeling | Compute | Perception | Research operations |
-|:--|:--|:--|:--|
-| `Python` · `PyTorch` | `CUDA` · `Linux / WSL` | `OpenCV` · detection · 3DGS | `Bash` · `SQLite` · `GitHub Actions` |
+- **Modeling:** `Python` · `PyTorch`
+- **Compute:** `CUDA` · `Linux / WSL`
+- **Perception:** `OpenCV` · detection · 3DGS
+- **Research operations:** `Bash` · `SQLite` · `GitHub Actions`
 
 ## Open channel
 
