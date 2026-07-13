@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 540" role="img" aria-labelledby="title desc">
+  <title id="title">zym-plus research engineering profile</title>
+  <desc id="desc">A compact signal display for time-series forecasting, vision and 3D, and research systems.</desc>
+  <style>
+    .canvas { fill: #f8f4ef; }
+    .frame, .rule, .rail { fill: none; stroke: #ddd5cf; }
+    .ink { fill: #171a18; }
+    .muted { fill: #5a625c; }
+    .quiet { fill: #88918a; }
+    .green { fill: #2da44e; stroke: #2da44e; }
+    .blue { fill: #315efb; stroke: #315efb; }
+    .coral { fill: #e994b4; stroke: #e994b4; }
+    .serif { font-family: Georgia, 'Times New Roman', serif; letter-spacing: 0; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0; }
+    .signal { fill: none; stroke-width: 2; stroke-dasharray: 8 14; animation: flow 18s linear infinite; }
+    .pulse { animation: pulse 4.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes flow { to { stroke-dashoffset: -176; } }
+    @keyframes pulse { 0%, 100% { opacity: .45; transform: scale(.8); } 50% { opacity: 1; transform: scale(1); } }
+    @media (prefers-color-scheme: dark) {
+      .canvas { fill: #151816; }
+      .frame, .rule, .rail { stroke: #333a35; }
+      .ink { fill: #f2f5ef; }
+      .muted { fill: #a8b0a9; }
+      .quiet { fill: #7f8981; }
+      .green { fill: #56d364; stroke: #56d364; }
+      .blue { fill: #6f91ff; stroke: #6f91ff; }
+      .coral { fill: #ff9fc4; stroke: #ff9fc4; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .signal, .pulse { animation: none; }
+      .runner { display: none; }
+    }
+  </style>
+
+  <rect class="canvas" x="1" y="1" width="638" height="538" rx="6"/>
+  <rect class="frame" x="1" y="1" width="638" height="538" rx="6"/>
+  <path class="rule" d="M34 62H606"/>
+
+  <text class="muted mono" x="34" y="40" font-size="15">ZYM / PLUS · RESEARCH ENGINEERING</text>
+  <circle class="green pulse" cx="594" cy="35" r="5"/>
+
+  <text class="ink serif" x="34" y="157" font-size="76" font-weight="700">zym-plus</text>
+  <text class="muted serif" x="37" y="199" font-size="22">Ideas that can survive a hard test.</text>
+
+  <g class="mono" font-size="15" transform="translate(38 251)">
+    <rect class="green" x="0" y="-11" width="8" height="8"/>
+    <text class="ink" x="20" y="0">TIME SERIES</text>
+    <rect class="blue" x="0" y="37" width="8" height="8"/>
+    <text class="ink" x="20" y="48">VISION + 3D</text>
+    <rect class="coral" x="0" y="85" width="8" height="8"/>
+    <text class="ink" x="20" y="96">RESEARCH SYSTEMS</text>
+  </g>
+
+  <g transform="translate(272 246)">
+    <path class="rail" d="M0 0H332M0 48H332M0 96H332"/>
+    <path class="signal green" d="M0 0H332"/>
+    <path class="signal blue" d="M0 48H332"/>
+    <path class="signal coral" d="M0 96H332"/>
+    <circle class="runner green" cy="0" r="5">
+      <animate attributeName="cx" values="0;332" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="runner blue" cy="48" r="5">
+      <animate attributeName="cx" values="0;332" dur="11.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="runner coral" cy="96" r="5">
+      <animate attributeName="cx" values="0;332" dur="14s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <path class="rule" d="M34 393H606"/>
+  <text class="ink mono" x="34" y="439" font-size="18">MECHANISM → EVIDENCE → DECISION</text>
+  <text class="quiet mono" x="34" y="477" font-size="14">FAST FALSIFICATION / FAIR COMPARISON</text>
+  <text class="muted mono" x="34" y="511" font-size="14">CN · 2026</text>
+</svg>

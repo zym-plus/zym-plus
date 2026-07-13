@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760" role="img" aria-labelledby="title desc">
+  <title id="title">Research loop</title>
+  <desc id="desc">Literature, contradiction, mechanism, falsification, ablation, and decision.</desc>
+  <style>
+    .canvas { fill: #f8f4ef; }
+    .frame, .axis, .tick { fill: none; stroke: #ddd5cf; }
+    .ink { fill: #171a18; }
+    .muted { fill: #687169; }
+    .accent { fill: #2da44e; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0; }
+    .tracer { animation: travel 12s cubic-bezier(.65, 0, .35, 1) infinite; }
+    .step { animation: breathe 12s ease-in-out infinite; }
+    .s2 { animation-delay: 2s; } .s3 { animation-delay: 4s; } .s4 { animation-delay: 6s; }
+    .s5 { animation-delay: 8s; } .s6 { animation-delay: 10s; }
+    @keyframes travel { 0% { transform: translateY(0); } 83.33%, 100% { transform: translateY(525px); } }
+    @keyframes breathe { 0%, 14%, 100% { opacity: 1; } 20%, 94% { opacity: .42; } }
+    @media (prefers-color-scheme: dark) {
+      .canvas { fill: #151816; }
+      .frame, .axis, .tick { stroke: #333a35; }
+      .ink { fill: #f2f5ef; }
+      .muted { fill: #9da69f; }
+      .accent { fill: #56d364; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tracer, .step { animation: none; }
+      .tracer { display: none; }
+    }
+  </style>
+
+  <rect class="canvas" x="1" y="1" width="638" height="758" rx="6"/>
+  <rect class="frame" x="1" y="1" width="638" height="758" rx="6"/>
+  <text class="muted mono" x="34" y="44" font-size="14">THE SHORTEST USEFUL RESEARCH LOOP</text>
+  <text class="muted mono" x="606" y="44" font-size="13" text-anchor="end">STOP · HOLD · GO</text>
+
+  <path class="axis" d="M92 112V637"/>
+  <g class="tracer" transform="translate(92 112)">
+    <circle class="accent" r="7"/>
+  </g>
+
+  <g class="mono">
+    <g class="step s1" transform="translate(92 112)">
+      <path class="tick" d="M-13 0H13"/>
+      <text class="accent" x="35" y="-20" font-size="13">01</text>
+      <text class="ink" x="35" y="5" font-size="18">LITERATURE</text>
+      <text class="muted" x="35" y="31" font-size="14">latest evidence</text>
+    </g>
+    <g class="step s2" transform="translate(92 217)">
+      <path class="tick" d="M-13 0H13"/>
+      <text class="accent" x="35" y="-20" font-size="13">02</text>
+      <text class="ink" x="35" y="5" font-size="18">CONTRADICTION</text>
+      <text class="muted" x="35" y="31" font-size="14">what does not fit</text>
+    </g>
+    <g class="step s3" transform="translate(92 322)">
+      <path class="tick" d="M-13 0H13"/>
+      <text class="accent" x="35" y="-20" font-size="13">03</text>
+      <text class="ink" x="35" y="5" font-size="18">MECHANISM</text>
+      <text class="muted" x="35" y="31" font-size="14">smallest hypothesis</text>
+    </g>
+    <g class="step s4" transform="translate(92 427)">
+      <path class="tick" d="M-13 0H13"/>
+      <text class="accent" x="35" y="-20" font-size="13">04</text>
+      <text class="ink" x="35" y="5" font-size="18">FALSIFICATION</text>
+      <text class="muted" x="35" y="31" font-size="14">cheapest fair test</text>
+    </g>
+    <g class="step s5" transform="translate(92 532)">
+      <path class="tick" d="M-13 0H13"/>
+      <text class="accent" x="35" y="-20" font-size="13">05</text>
+      <text class="ink" x="35" y="5" font-size="18">ABLATION</text>
+      <text class="muted" x="35" y="31" font-size="14">source of the gain</text>
+    </g>
+    <g class="step s6" transform="translate(92 637)">
+      <path class="tick" d="M-13 0H13"/>
+      <text class="accent" x="35" y="-20" font-size="13">06</text>
+      <text class="ink" x="35" y="5" font-size="18">DECISION</text>
+      <text class="muted" x="35" y="31" font-size="14">stop, hold, or go</text>
+    </g>
+  </g>
+</svg>

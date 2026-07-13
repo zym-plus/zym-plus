@@ -1,56 +1,73 @@
-<h1 align="center">zym-plus</h1>
+<picture>
+  <source media="(max-width: 640px)" srcset="./assets/hero-mobile.svg">
+  <img src="./assets/hero.svg" width="100%" alt="zym-plus — research engineering across time-series forecasting, vision and 3D, and research systems">
+</picture>
 
 <p align="center">
-  AI research engineering / time-series forecasting / vision & 3D / WSL-native research stack
+  <a href="https://github.com/zym-plus?tab=repositories">Repositories</a>
+  &nbsp;/&nbsp;
+  <a href="mailto:zymhandsomeman@gmail.com">Email</a>
 </p>
 
-<p align="center">
-  I build experiment-first AI systems with Python, PyTorch, CUDA, OpenCV, Linux and WSL.
-  My work usually connects model code, reproducible scripts, visual verification and automation.
-</p>
+### Hi, I'm zym-plus. I turn AI research questions into reproducible evidence.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
-  <img src="https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA" />
-  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCV" />
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=111111" alt="Linux" />
-  <img src="https://img.shields.io/badge/WSL-0078D4?style=flat-square&logo=windows&logoColor=white" alt="WSL" />
-</p>
+I develop **models, experiment pipelines, and verification tools** across time-series forecasting, vision and 3D, and GPU research infrastructure. My default loop is simple: isolate a mechanism, design the shortest fair test, and keep only what survives strong baselines and ablation.
 
-| Core | Research | Engineering |
-|---|---|---|
-| Python, PyTorch, CUDA | time-series forecasting, CV, 3D reconstruction | WSL/Linux, GitHub Actions, reproducible scripts |
+<div align="right">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/character-interaction-static.png">
+    <img src="./assets/character-interaction.gif" width="150" alt="Small animated portraits of Ryo Yamada and Bocchi-chan">
+  </picture>
+</div>
 
-<p align="center">
-  <a href="https://github.com/zym-plus?tab=repositories">
-    <img src="https://img.shields.io/badge/repositories-open-111827?style=flat-square" alt="repositories" />
-  </a>
-  <img src="https://komarev.com/ghpvc/?username=zym-plus&style=flat-square&color=2563eb" alt="profile views" />
-  <img src="https://img.shields.io/github/followers/zym-plus?style=flat-square&label=followers&color=111827" alt="followers" />
-</p>
+## Current work
 
-<p align="center">
-  <img src="./profile-3d-contrib/profile-green-animate.svg" alt="3D GitHub contribution calendar" width="100%" />
-</p>
+**01 / Time-series forecasting**<br>
+When does a new mechanism beat a strong simple baseline for the right reason?<br>
+`Fair splits` · `Per-horizon comparison` · `Fast falsification` · `Ablation-first evidence`
 
-<p align="center">
-  <img src="./profile-summary-card-output/default/0-profile-details.svg" alt="profile details" width="100%" />
-</p>
+**02 / Vision and 3D**<br>
+Can a model improve a reconstruction or image pipeline in ways we can see and measure?<br>
+`End-to-end training` · `Visual verification` · `Reproducible evaluation`
 
-## Working Tracks
+**03 / Research systems**<br>
+How do we make GPU experiments easier to repeat, inspect, and hand off?<br>
+`Scripted environments` · `Structured logs` · `WSL/Linux automation`
 
-| Track | Bias |
-|---|---|
-| Time-series research | Fast falsification, fair baselines, ablation-first evidence |
-| Vision and 3D | Detection, deblurring, reconstruction, visual verification |
-| WSL research stack | Reproducible local environments, GPU scripts, automation |
+## Research loop
+
+<picture>
+  <source media="(max-width: 640px)" srcset="./assets/research-loop-mobile.svg">
+  <img src="./assets/research-loop.svg" width="100%" alt="Literature to contradiction to mechanism to falsification to ablation to decision">
+</picture>
+
+The artifact I care about is not just a checkpoint. It is a reproducible argument: **theory, code, controls, logs, and a clear decision**.
+
+## Engineering profile
+
+- **Models** — Small PyTorch modules with explicit hypotheses, shape contracts, and removable core mechanisms.
+- **Experiments** — Reproducible runs with fixed splits, strong local baselines, smoke tests, and multi-seed checks.
+- **Verification** — Result summaries, failure analysis, plots, image inspection, and contribution-source audits.
+- **Infrastructure** — CUDA workloads on Linux/WSL, shell automation, isolated environments, and GitHub Actions.
+
+## Working stack
+
+`Python` · `PyTorch` · `CUDA` · `NumPy` · `Pandas` · `OpenCV` · `Bash` · `Linux / WSL` · `GitHub Actions`
+
+## Activity
 
 <details>
-<summary>Visualization sources</summary>
+<summary>Open generated contribution view</summary>
 
-- [`yoshi389111/github-profile-3d-contrib`](https://github.com/yoshi389111/github-profile-3d-contrib): 3D contribution calendar.
-- [`vn7n24fzkq/github-profile-summary-cards`](https://github.com/vn7n24fzkq/github-profile-summary-cards): compact profile details card.
-- [`lowlighter/metrics`](https://github.com/lowlighter/metrics): generated metrics panel, kept in the repository for optional use.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-green.svg">
+  <img src="./profile-3d-contrib/profile-green-animate.svg" width="100%" alt="Generated GitHub contribution history">
+</picture>
+
+The contribution view is generated from public GitHub activity by [`yoshi389111/github-profile-3d-contrib`](https://github.com/yoshi389111/github-profile-3d-contrib) and refreshed by GitHub Actions. It is activity context, not a productivity score.
 
 </details>
+
+## Contact
+
+Good conversations usually start with a concrete contradiction, a reproducibility problem, or a result that deserves a harder baseline. [Send a note](mailto:zymhandsomeman@gmail.com?subject=Research%20conversation).
