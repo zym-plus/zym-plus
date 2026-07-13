@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 270" role="img" aria-labelledby="title desc">
+  <title id="title">Research score in six beats</title>
+  <desc id="desc">A looping research process from literature and contradiction to mechanism, falsification, ablation, and decision.</desc>
+  <style>
+    .canvas { fill: #ffffff; }
+    .panel { fill: #f6f8fa; }
+    .line { fill: none; stroke: #d0d7de; }
+    .ink { fill: #1f2328; }
+    .muted { fill: #59636e; }
+    .quiet { fill: #8c959f; }
+    .green { fill: #2da44e; }
+    .blue { fill: #2f81f7; }
+    .pink { fill: #d6578b; }
+    .yellow { fill: #bf8700; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0; }
+    .wave { fill: none; stroke: #2f81f7; stroke-width: 2; stroke-dasharray: 7 12; opacity: .42; animation: wave 10s linear infinite; }
+    .tracer { animation: travel 12s cubic-bezier(.6, 0, .3, 1) infinite; }
+    .beat { animation: beat 12s ease-in-out infinite; }
+    .b2 { animation-delay: 2s; } .b3 { animation-delay: 4s; } .b4 { animation-delay: 6s; }
+    .b5 { animation-delay: 8s; } .b6 { animation-delay: 10s; }
+    @keyframes wave { to { stroke-dashoffset: -152; } }
+    @keyframes travel { 0%, 3% { transform: translateX(0); } 83%, 100% { transform: translateX(940px); } }
+    @keyframes beat { 0%, 13%, 100% { opacity: 1; } 20%, 93% { opacity: .42; } }
+    @media (prefers-color-scheme: dark) {
+      .canvas { fill: #0d1117; } .panel { fill: #161b22; } .line { stroke: #30363d; }
+      .ink { fill: #f0f6fc; } .muted { fill: #9da7b3; } .quiet { fill: #6e7681; }
+      .green { fill: #3fb950; } .blue { fill: #58a6ff; } .pink { fill: #ff7eb6; } .yellow { fill: #d29922; }
+      .wave { stroke: #58a6ff; }
+    }
+    @media (prefers-reduced-motion: reduce) { .wave, .tracer, .beat { animation: none; } .tracer { transform: translateX(940px); } }
+  </style>
+
+  <rect class="canvas" x="1" y="1" width="1198" height="268" rx="6"/>
+  <rect class="line" x="1" y="1" width="1198" height="268" rx="6"/>
+  <text class="ink mono" x="38" y="38" font-size="14" font-weight="700">RESEARCH SCORE / SIX BEATS</text>
+  <text class="muted mono" x="1162" y="38" font-size="13" text-anchor="end">THE SHORTEST USEFUL LOOP · STOP / HOLD / GO</text>
+  <path class="line" d="M130 110H1070"/>
+  <path class="wave" d="M130 110l38-21 40 43 41-31 37 17 47-8 40-23 42 47 42-37 43 20 43-7 39-25 44 49 41-35 42 18 47-7 43-27 42 51 44-39 42 21 45-8 43-20"/>
+  <g class="tracer" transform="translate(130 110)"><circle class="pink" r="7"/></g>
+
+  <g class="mono" text-anchor="middle">
+    <g class="beat" transform="translate(130 110)"><circle class="green" r="7"/><text class="green" y="-27" font-size="13">01</text><text class="ink" y="51" font-size="15">LITERATURE</text><text class="muted" y="75" font-size="12">latest evidence</text></g>
+    <g class="beat b2" transform="translate(318 110)"><circle class="blue" r="7"/><text class="blue" y="-27" font-size="13">02</text><text class="ink" y="51" font-size="15">CONTRADICTION</text><text class="muted" y="75" font-size="12">what does not fit</text></g>
+    <g class="beat b3" transform="translate(506 110)"><circle class="pink" r="7"/><text class="pink" y="-27" font-size="13">03</text><text class="ink" y="51" font-size="15">MECHANISM</text><text class="muted" y="75" font-size="12">smallest hypothesis</text></g>
+    <g class="beat b4" transform="translate(694 110)"><circle class="yellow" r="7"/><text class="yellow" y="-27" font-size="13">04</text><text class="ink" y="51" font-size="15">FALSIFICATION</text><text class="muted" y="75" font-size="12">cheapest fair test</text></g>
+    <g class="beat b5" transform="translate(882 110)"><circle class="blue" r="7"/><text class="blue" y="-27" font-size="13">05</text><text class="ink" y="51" font-size="15">ABLATION</text><text class="muted" y="75" font-size="12">source of the gain</text></g>
+    <g class="beat b6" transform="translate(1070 110)"><circle class="green" r="7"/><text class="green" y="-27" font-size="13">06</text><text class="ink" y="51" font-size="15">DECISION</text><text class="muted" y="75" font-size="12">stop, hold, or go</text></g>
+  </g>
+  <rect class="panel" x="38" y="220" width="1124" height="26" rx="3"/>
+  <text class="muted mono" x="56" y="238" font-size="12">A METHOD NAME COMES AFTER THE SIGNAL, THE CONTRIBUTION AUDIT, AND THE NOVELTY CHECK.</text>
+</svg>

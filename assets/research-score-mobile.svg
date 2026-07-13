@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 650" role="img" aria-labelledby="title desc">
+  <title id="title">Research score in six beats mobile</title>
+  <desc id="desc">A vertical looping research process from literature to decision.</desc>
+  <style>
+    .canvas { fill: #ffffff; } .panel { fill: #f6f8fa; } .line { fill: none; stroke: #d0d7de; }
+    .ink { fill: #1f2328; } .muted { fill: #59636e; } .quiet { fill: #8c959f; }
+    .green { fill: #2da44e; } .blue { fill: #2f81f7; } .pink { fill: #d6578b; } .yellow { fill: #bf8700; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0; }
+    .tracer { animation: travel 12s cubic-bezier(.6, 0, .3, 1) infinite; }
+    .beat { animation: beat 12s ease-in-out infinite; }
+    .b2 { animation-delay: 2s; } .b3 { animation-delay: 4s; } .b4 { animation-delay: 6s; } .b5 { animation-delay: 8s; } .b6 { animation-delay: 10s; }
+    @keyframes travel { 0%, 3% { transform: translateY(0); } 83%, 100% { transform: translateY(440px); } }
+    @keyframes beat { 0%, 13%, 100% { opacity: 1; } 20%, 93% { opacity: .42; } }
+    @media (prefers-color-scheme: dark) {
+      .canvas { fill: #0d1117; } .panel { fill: #161b22; } .line { stroke: #30363d; }
+      .ink { fill: #f0f6fc; } .muted { fill: #9da7b3; } .quiet { fill: #6e7681; }
+      .green { fill: #3fb950; } .blue { fill: #58a6ff; } .pink { fill: #ff7eb6; } .yellow { fill: #d29922; }
+    }
+    @media (prefers-reduced-motion: reduce) { .tracer, .beat { animation: none; } .tracer { transform: translateY(440px); } }
+  </style>
+  <rect class="canvas" x="1" y="1" width="718" height="648" rx="6"/><rect class="line" x="1" y="1" width="718" height="648" rx="6"/>
+  <text class="ink mono" x="30" y="38" font-size="15" font-weight="700">RESEARCH SCORE / SIX BEATS</text>
+  <text class="muted mono" x="690" y="38" font-size="12" text-anchor="end">STOP / HOLD / GO</text>
+  <path class="line" d="M92 96V536"/>
+  <g class="tracer" transform="translate(92 96)"><circle class="pink" r="8"/></g>
+  <g class="mono">
+    <g class="beat" transform="translate(92 96)"><circle class="green" r="8"/><text class="green" x="-32" y="5" font-size="13">01</text><text class="ink" x="34" y="-3" font-size="17">LITERATURE</text><text class="muted" x="34" y="21" font-size="13">latest evidence</text></g>
+    <g class="beat b2" transform="translate(92 184)"><circle class="blue" r="8"/><text class="blue" x="-32" y="5" font-size="13">02</text><text class="ink" x="34" y="-3" font-size="17">CONTRADICTION</text><text class="muted" x="34" y="21" font-size="13">what does not fit</text></g>
+    <g class="beat b3" transform="translate(92 272)"><circle class="pink" r="8"/><text class="pink" x="-32" y="5" font-size="13">03</text><text class="ink" x="34" y="-3" font-size="17">MECHANISM</text><text class="muted" x="34" y="21" font-size="13">smallest hypothesis</text></g>
+    <g class="beat b4" transform="translate(92 360)"><circle class="yellow" r="8"/><text class="yellow" x="-32" y="5" font-size="13">04</text><text class="ink" x="34" y="-3" font-size="17">FALSIFICATION</text><text class="muted" x="34" y="21" font-size="13">cheapest fair test</text></g>
+    <g class="beat b5" transform="translate(92 448)"><circle class="blue" r="8"/><text class="blue" x="-32" y="5" font-size="13">05</text><text class="ink" x="34" y="-3" font-size="17">ABLATION</text><text class="muted" x="34" y="21" font-size="13">source of the gain</text></g>
+    <g class="beat b6" transform="translate(92 536)"><circle class="green" r="8"/><text class="green" x="-32" y="5" font-size="13">06</text><text class="ink" x="34" y="-3" font-size="17">DECISION</text><text class="muted" x="34" y="21" font-size="13">stop, hold, or go</text></g>
+  </g>
+  <rect class="panel" x="30" y="588" width="660" height="34" rx="3"/>
+  <text class="muted mono" x="360" y="610" font-size="12" text-anchor="middle">NAME THE METHOD ONLY AFTER THE CONTRIBUTION SURVIVES.</text>
+</svg>

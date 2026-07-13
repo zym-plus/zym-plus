@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 650" role="img" aria-labelledby="title desc">
+  <title id="title">ZYM Signal Lab mobile</title>
+  <desc id="desc">A compact animated research console with forecasting, perception, systems, and two character monitors.</desc>
+  <style>
+    .canvas { fill: #ffffff; }
+    .panel { fill: #f6f8fa; }
+    .line { fill: none; stroke: #d0d7de; }
+    .ink { fill: #1f2328; }
+    .muted { fill: #59636e; }
+    .quiet { fill: #8c959f; }
+    .blue-fill { fill: #2f81f7; }
+    .pink-fill { fill: #d6578b; }
+    .green-fill { fill: #2da44e; }
+    .yellow-fill { fill: #bf8700; }
+    .blue-stroke { stroke: #2f81f7; }
+    .pink-stroke { stroke: #d6578b; }
+    .green-stroke { stroke: #2da44e; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0; }
+    .wave { fill: none; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 9 12; animation: wave 9s linear infinite; }
+    .heads { animation: bob 5.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .orbit { fill: none; stroke-width: 2; stroke-dasharray: 5 10; transform-box: fill-box; transform-origin: center; animation: orbit 13s linear infinite; }
+    .led { animation: led 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .meter { animation: meter 1.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+    .m2 { animation-delay: -.4s; } .m3 { animation-delay: -.8s; } .m4 { animation-delay: -1.2s; }
+    @keyframes wave { to { stroke-dashoffset: -168; } }
+    @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes led { 0%, 100% { opacity: .38; transform: scale(.75); } 50% { opacity: 1; transform: scale(1); } }
+    @keyframes meter { 0%, 100% { transform: scaleY(.34); } 50% { transform: scaleY(1); } }
+    @media (prefers-color-scheme: dark) {
+      .canvas { fill: #0d1117; } .panel { fill: #161b22; } .line { stroke: #30363d; }
+      .ink { fill: #f0f6fc; } .muted { fill: #9da7b3; } .quiet { fill: #6e7681; }
+      .blue-fill { fill: #58a6ff; } .pink-fill { fill: #ff7eb6; } .green-fill { fill: #3fb950; } .yellow-fill { fill: #d29922; }
+      .blue-stroke { stroke: #58a6ff; } .pink-stroke { stroke: #ff7eb6; } .green-stroke { stroke: #3fb950; }
+    }
+    @media (prefers-reduced-motion: reduce) { .wave, .heads, .orbit, .led, .meter { animation: none; } }
+  </style>
+
+  <rect class="canvas" x="1" y="1" width="718" height="648" rx="6"/>
+  <rect class="line" x="1" y="1" width="718" height="648" rx="6"/>
+  <path class="line" d="M28 62H692M28 360H692M28 570H692"/>
+
+  <g class="mono" font-size="15">
+    <text class="ink" x="28" y="39" font-weight="700">ZYM / SIGNAL LAB</text>
+    <circle class="green-fill led" cx="566" cy="34" r="5"/>
+    <text class="muted" x="692" y="39" text-anchor="end">LIVE · UTC+8</text>
+  </g>
+
+  <g transform="translate(30 100)">
+    <text class="green-fill mono" x="0" y="0" font-size="16">NOISE → SIGNAL</text>
+    <text class="ink sans" x="0" y="68" font-size="62" font-weight="750">zym-plus</text>
+    <text class="ink sans" x="2" y="112" font-size="22" font-weight="600">Ideas that survive hard tests.</text>
+    <text class="muted mono" x="2" y="148" font-size="14">FORECAST · PERCEIVE · SYSTEMS</text>
+  </g>
+
+  <g transform="translate(392 82)">
+    <rect class="panel" x="0" y="0" width="298" height="244" rx="4"/>
+    <text class="muted mono" x="149" y="25" font-size="12" text-anchor="middle">BOCCHI + RYO / MONITORS</text>
+    <circle class="pink-stroke orbit" cx="149" cy="125" r="94"/>
+    <circle class="blue-stroke orbit" cx="149" cy="125" r="104" style="animation-direction:reverse"/>
+    <g class="heads"><image href="data:image/png;base64,{{CHARACTER_DATA}}" x="29" y="63" width="240" height="127"/></g>
+    <g transform="translate(103 204)">
+      <rect class="blue-fill meter" x="0" y="0" width="10" height="22" rx="2"/>
+      <rect class="pink-fill meter m2" x="20" y="0" width="10" height="22" rx="2"/>
+      <rect class="green-fill meter m3" x="40" y="0" width="10" height="22" rx="2"/>
+      <rect class="yellow-fill meter m4" x="60" y="0" width="10" height="22" rx="2"/>
+      <rect class="pink-fill meter m2" x="80" y="0" width="10" height="22" rx="2"/>
+    </g>
+  </g>
+
+  <g transform="translate(30 392)">
+    <rect class="panel" x="0" y="0" width="660" height="138" rx="4"/>
+    <path class="wave blue-stroke" d="M20 43h40l17-13 20 27 22-20 28 10 28-4 24-17 27 31 26-22 31 10 34-4 25-16 26 30 25-20 33 10 33-5 25-14 26 26 25-16 31 9 42-4 20-11 24 20h34"/>
+    <g class="mono" font-size="14">
+      <rect class="green-fill" x="20" y="84" width="8" height="8"/><text class="ink" x="38" y="93">01 FORECAST</text>
+      <rect class="blue-fill" x="231" y="84" width="8" height="8"/><text class="ink" x="249" y="93">02 PERCEIVE</text>
+      <rect class="pink-fill" x="457" y="84" width="8" height="8"/><text class="ink" x="475" y="93">03 SYSTEMS</text>
+      <text class="muted" x="20" y="120" font-size="12">BASELINE / ABLATION</text>
+      <text class="muted" x="640" y="120" font-size="12" text-anchor="end">RENDER / VERIFY / REPEAT</text>
+    </g>
+  </g>
+
+  <g class="mono">
+    <text class="ink" x="28" y="612" font-size="15">OPEN RESEARCH DECK ↓</text>
+    <text class="quiet" x="692" y="612" font-size="12" text-anchor="end">CLICK / EXPAND / FOLLOW THE PROOF</text>
+  </g>
+</svg>
